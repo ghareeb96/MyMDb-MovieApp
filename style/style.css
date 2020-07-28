@@ -54,17 +54,62 @@ body header #searchBar {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 40%;
+  width: 50%;
   margin: 0 auto;
 }
 
 body header #searchBar #searchInput {
-  width: 70%;
+  width: 60%;
 }
 
 body header #searchBar #searchBtn {
   width: 20%;
   margin-left: auto;
+}
+
+body header .searchOptions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 10%;
+  width: 80%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 27vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 20px 20px;
+  border: 1px solid #ffd000;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+body header .searchOptions .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 40%;
+  margin: auto;
+}
+
+body header .searchOptions.optionsActive {
+  top: 30vh;
+  opacity: 1;
+  pointer-events: all;
 }
 
 body .moviesContainer {
@@ -74,7 +119,7 @@ body .moviesContainer {
       grid-template-columns: repeat(auto-fit, minmax(269px, 1fr));
   grid-gap: 2rem;
   width: 90%;
-  margin: 5% auto;
+  margin: 10% auto;
   justify-items: center;
 }
 

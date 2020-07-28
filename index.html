@@ -19,6 +19,25 @@
         <div class="form-group" id="searchBar">
             <input type="text" class="form-control" placeholder="Search Here ..." id="searchInput">
             <button id="searchBtn" class="btn btn-secondary">Search</button>
+            <button id="searchOpBtn" class="btn btn-sm btn-outline-warning">Search Options</button>
+        </div>
+
+        <div class="searchOptions">
+            <div class="form-group">
+                <legend>Type of Search</legend>
+                <select class="custom-select" id="type">
+                    <option value="any">Any</option>
+                    <option value="movie">Movie</option>
+                    <option value="series">Series</option>
+                    <option value="episode">Episode</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <legend>Release Year</legend>
+                <input type="number" min="1950" max="2020" class="form-control" placeholder="Year" id="year">
+            </div>
+
+
         </div>
     </header>
 

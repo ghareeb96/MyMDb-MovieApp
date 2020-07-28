@@ -1,16 +1,23 @@
-const url = "http://www.omdbapi.com/?apikey=7d1c1e6c";
+let url = "http://www.omdbapi.com/?apikey=7d1c1e6c";
+let page;
 const noPic = "https://upload.wikimedia.org/wikipedia/en/6/60/No_Picture.jpg";
-let page = 1;
 $("#searchBtn").click(() => {
         page = 1;
-        $.get(url + "&s=" + $("#searchInput").val() + "&page=" +
-            page).then(response => {
-            console.log(response);
+        newUrl = url + "&s=" + $("#searchInput").val() + "&page=" + page;
+        if ($(".searchOptions").hasClass("optionsActive")) {
+            if ($("#type").val() != "any") {
+                newUrl += "&type=" + $("#type").val();
+            }
+            if ($("#year").val() != "") {
+                newUrl += "&y=" + $("#year").val();
+            }
+        }
+
+        $.get(newUrl).then(response => {
             $(".moviesContainer").html("");
             let movies = response.Search;
             $.each(movies, (index, movie) => {
 
-                console.log(movie);
                 $(".moviesContainer").append(
                     `
                 <div class="movieContainer">
@@ -29,8 +36,6 @@ $("#searchBtn").click(() => {
             })
         })
         page++;
-        console.log($(".moviesContainer"));
-        console.log(page);
 
     }
 
@@ -45,12 +50,18 @@ $(window).on('scroll', function () {
     // console.log(scrollPosition);
     // console.log(divTotalHeight);
     if (scrollPosition >= divTotalHeight) {
-        $.get(url + "&s=" + $("#searchInput").val() + "&page=" +
-            page).then(response => {
+        newUrl = url + "&s=" + $("#searchInput").val() + "&page=" + page;
+        if ($(".searchOptions").hasClass("optionsActive")) {
+            if ($("#type").val() != "any") {
+                newUrl += "&type=" + $("#type").val();
+            }
+            if ($("#year").val() != "" && $("#year").val() >= 1950 && $("#year").val() <= 2020) {
+                newUrl += "&y=" + $("#year").val();
+            }
+        }
+        $.get(newUrl).then(response => {
             let movies = response.Search;
             $.each(movies, (index, movie) => {
-
-                console.log(movie);
                 $(".moviesContainer").append(
                     `
                 <div class="movieContainer">
@@ -67,11 +78,11 @@ $(window).on('scroll', function () {
                 `
                 );
             })
+            page++;
         })
-        page++;
-        console.log($(".moviesContainer"));
-        console.log(page);
-
-
     }
 });
+
+$("#searchOpBtn").on("click", () => {
+    $(".searchOptions").toggleClass("optionsActive");
+})
