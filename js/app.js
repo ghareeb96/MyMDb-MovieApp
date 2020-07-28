@@ -1,4 +1,4 @@
-let url = "http://www.omdbapi.com/?apikey=7d1c1e6c";
+let url = "https://www.omdbapi.com/?apikey=7d1c1e6c";
 let page;
 const noPic = "https://upload.wikimedia.org/wikipedia/en/6/60/No_Picture.jpg";
 $("#searchBtn").click(() => {
