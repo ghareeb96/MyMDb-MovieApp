@@ -14,6 +14,7 @@ $("#searchBtn").click(() => {
         }
 
         $.get(newUrl).then(response => {
+            console.log(response)
             $(".moviesContainer").html("");
             let movies = response.Search;
             $.each(movies, (index, movie) => {
@@ -28,19 +29,22 @@ $("#searchBtn").click(() => {
                         <h5 class="title">${movie.Title}</h5>
                         <h6 class="year">${movie.Year}</h6>
                         <h6 class="type">${movie.Type}</h6>
-                        <a href="" class="movie-details btn btn-outline-warning">More details</a>
+                        <a id="${movie.imdbID}" class="movie-details btn btn-outline-warning">More details</a>
                     </div>
                 </div>
                 `
                 );
             })
         })
+
+
         page++;
+
+
 
     }
 
 )
-
 
 
 
@@ -72,7 +76,7 @@ $(window).on('scroll', function () {
                         <h5 class="title">${movie.Title}</h5>
                         <h6 class="year">${movie.Year}</h6>
                         <h6 class="type">${movie.Type}</h6>
-                        <a href="" class="movie-details btn btn-outline-warning">More details</a>
+                        <a id="${movie.imdbID}" class="movie-details btn btn-outline-warning">More details</a>
                     </div>
                 </div>
                 `
@@ -85,4 +89,52 @@ $(window).on('scroll', function () {
 
 $("#searchOpBtn").on("click", () => {
     $(".searchOptions").toggleClass("optionsActive");
+})
+
+$(document).on("click", ".movie-details", function (e) {
+    $.get(`http://www.omdbapi.com/?apikey=7d1c1e6c&i=${e.target.id}&plot=full`).then(response => {
+        let movie = response;
+        console.log(movie);
+        $(".my-modal").append(
+            `<div class="my-modal-content">
+                <div class="poster-container">
+                    <img src="${movie.Poster}" alt="">
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <h1>${movie.Title} <span>(${movie.Year})<span/></h1>
+                        <h3>${movie.Type}</h3>
+                    </div>
+                    <div class="actors">
+                        <h2>Actors : <span>${movie.Actors}<span/></h2>
+                    </div>
+                    <div class="director">
+                        <h2>Director : <span>${movie.Director}<span/></h2>
+                    </div>
+                    <div class="genre">
+                        <h2>Genre : <span>${movie.Genre}<span/></h2>
+                    </div>
+                    <div class="rated">
+                        <h2>Rated : <span>${movie.Rated}<span/></h2>
+                    </div>
+                    <div class="imdb-rate">
+                        <h2>IMDb Rating : <span>${movie.imdbRating}<span/></h2>
+                    </div>
+                    
+                    <fieldset class="plot">
+                        <h4>Plot</h4>
+                        <p>${movie.Plot}</p>
+                    </fieldset>
+                </div>
+            </div>`
+        );
+        $(".my-modal").addClass("modal-open");
+    })
+})
+$(document).on("click", ".my-modal", (e) => {
+    if (e.target.classList.contains("my-modal")) {
+        $(".my-modal").removeClass("modal-open");
+        $(".my-modal").html('');
+    }
+
 })

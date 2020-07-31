@@ -1,3 +1,8 @@
+@font-face {
+  font-family: logoFont;
+  src: url(impact.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -38,7 +43,7 @@ body header .logo {
 
 body header .logo h1 {
   color: black;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: logoFont;
   font-size: 5rem;
 }
 
@@ -102,7 +107,7 @@ body header .searchOptions .form-group {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 40%;
+  width: 35%;
   margin: auto;
 }
 
@@ -177,5 +182,103 @@ body .moviesContainer .movieContainer .movie-info {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), black);
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
+}
+
+body .my-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+body .my-modal .my-modal-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #444444;
+  min-height: 70vh;
+  height: auto;
+  width: 80%;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+body .my-modal .my-modal-content .poster-container {
+  width: 30%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .my-modal .my-modal-content .poster-container img {
+  width: 90%;
+  height: 90%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+body .my-modal .my-modal-content .info {
+  padding: 20px;
+  color: white;
+  width: 70%;
+  font-family: 'Lato', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .my-modal .my-modal-content .info span {
+  font-size: 1.4rem;
+}
+
+body .my-modal .my-modal-content .info fieldset {
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 8px;
+  max-height: 400px;
+  overflow: auto;
+}
+
+body .my-modal .my-modal-content .info fieldset p {
+  text-align: justify;
+  font-size: 1.2rem;
+}
+
+body .my-modal.modal-open {
+  opacity: 1;
+  pointer-events: all;
 }
 /*# sourceMappingURL=style.css.map */
