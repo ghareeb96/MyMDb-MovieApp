@@ -14,7 +14,6 @@ $("#searchBtn").click(() => {
         }
 
         $.get(newUrl).then(response => {
-            console.log(response)
             $(".moviesContainer").html("");
             let movies = response.Search;
             $.each(movies, (index, movie) => {
@@ -23,7 +22,7 @@ $("#searchBtn").click(() => {
                     `
                 <div class="movieContainer">
                     <div class="movie-img">
-                        <img id="poster-img" src="${movie.Poster == 'N/A' ?   noPic : movie.Poster }" alt="Poster">
+                        <img src="${movie.Poster == 'N/A' ?   noPic : movie.Poster }" alt="Poster">
                     </div>
                     <div class="movie-info">
                         <h5 class="title">${movie.Title}</h5>
@@ -70,7 +69,7 @@ $(window).on('scroll', function () {
                     `
                 <div class="movieContainer">
                     <div class="movie-img">
-                        <img id="poster-img" src="${movie.Poster == 'N/A' ?   noPic : movie.Poster }" alt="Poster">
+                        <img  src="${movie.Poster == 'N/A' ?   noPic : movie.Poster }" alt="Poster">
                     </div>
                     <div class="movie-info">
                         <h5 class="title">${movie.Title}</h5>
@@ -94,7 +93,6 @@ $("#searchOpBtn").on("click", () => {
 $(document).on("click", ".movie-details", function (e) {
     $.get(`http://www.omdbapi.com/?apikey=7d1c1e6c&i=${e.target.id}&plot=full`).then(response => {
         let movie = response;
-        console.log(movie);
         $(".my-modal").append(
             `<div class="my-modal-content">
                 <div class="poster-container">
@@ -131,6 +129,7 @@ $(document).on("click", ".movie-details", function (e) {
         $(".my-modal").addClass("modal-open");
     })
 })
+
 $(document).on("click", ".my-modal", (e) => {
     if (e.target.classList.contains("my-modal")) {
         $(".my-modal").removeClass("modal-open");

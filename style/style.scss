@@ -65,15 +65,17 @@ body {
         #searchBar {
             display: flex;
             flex-direction: row;
-            width: 50%;
+            width: 40%;
             margin: 0 auto;
 
             #searchInput {
-                width: 60%;
+                width: auto;
+                min-width: 50%;
             }
 
             #searchBtn {
-                width: 20%;
+                width: auto;
+                min-width: 25%;
                 margin-left: auto;
 
             }
@@ -223,7 +225,6 @@ body {
             }
 
             .info {
-                padding: 20px;
                 color: white;
                 width: 70%;
                 display: flex;
@@ -284,6 +285,179 @@ body {
         &.modal-open {
             opacity: 1;
             pointer-events: all;
+        }
+    }
+}
+
+@media screen and(max-width : 1100px) {
+    body {
+        font-size: 0.8rem;
+
+        header {
+            #searchBar {
+                width: 60%;
+            }
+
+            .searchOptions {
+                .form-group {
+                    width: 45%;
+                }
+            }
+        }
+
+        .my-modal {
+            .my-modal-content {
+                min-height: 50vh;
+
+
+                .info {
+                    padding: 10px;
+
+                    .title {
+                        h1 {
+                            font-size: 1.6rem;
+                        }
+
+                        h3 {
+                            font-size: 1rem;
+
+                        }
+                    }
+
+                    h2,
+                    h4 {
+                        font-size: 1.2rem;
+                    }
+
+
+                    fieldset {
+                        p {
+                            font-size: 0.8rem;
+                        }
+                    }
+
+                    span {
+                        font-size: 1rem;
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width : 800px) {
+    body {
+        header {
+            flex-direction: row;
+            padding: 15px;
+
+            #searchBar {
+                width: 50%;
+                flex-direction: column;
+
+                #searchInput {
+                    width: 80%;
+                    margin: 5px auto;
+
+                }
+
+                #searchBtn {
+                    width: 40%;
+                    margin: 5px auto;
+
+                }
+
+                #searchOpBtn {
+                    width: 40%;
+                    margin: 5px auto;
+
+                }
+            }
+
+            .searchOptions {
+                .form-group {
+                    align-items: center;
+
+                    legend {
+                        font-size: 1rem;
+                        text-align: center;
+                        margin: 0;
+                    }
+
+                }
+            }
+        }
+
+        .moviesContainer {
+            .movieContainer {
+                &:hover {
+                    .movie-info {
+                        top: 200px;
+                    }
+                }
+
+                .movie-img {
+                    filter: brightness(50%);
+                }
+
+
+                .movie-info {
+                    top: 200px;
+                    left: 0;
+                    opacity: 1;
+
+                }
+            }
+        }
+
+        .my-modal {
+            .my-modal-content {
+                flex-direction: column;
+                min-height: 50vh;
+                overflow: auto;
+
+                .poster-container {
+                    width: auto;
+                    height: 20%;
+                    margin: auto;
+                }
+
+                .info {
+                    padding: 10px;
+                    width: 100%;
+
+
+                    .title {
+                        h1 {
+                            font-size: 1.6rem;
+                        }
+
+                        h3 {
+                            font-size: 1rem;
+
+                        }
+                    }
+
+                    h2,
+                    h4 {
+                        font-size: 1.2rem;
+                    }
+
+
+                    fieldset {
+
+                        p {
+                            font-size: 0.8rem;
+                        }
+                    }
+
+                    span {
+                        font-size: 1rem;
+
+                    }
+                }
+            }
         }
     }
 }

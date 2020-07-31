@@ -64,16 +64,18 @@ body header #searchBar {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 50%;
+  width: 40%;
   margin: 0 auto;
 }
 
 body header #searchBar #searchInput {
-  width: 60%;
+  width: auto;
+  min-width: 50%;
 }
 
 body header #searchBar #searchBtn {
-  width: 20%;
+  width: auto;
+  min-width: 25%;
   margin-left: auto;
 }
 
@@ -256,7 +258,6 @@ body .my-modal .my-modal-content .poster-container img {
 }
 
 body .my-modal .my-modal-content .info {
-  padding: 20px;
   color: white;
   width: 70%;
   display: -webkit-box;
@@ -316,5 +317,123 @@ body .my-modal .my-modal-content .info span {
 body .my-modal.modal-open {
   opacity: 1;
   pointer-events: all;
+}
+
+@media screen and (max-width: 1100px) {
+  body {
+    font-size: 0.8rem;
+  }
+  body header #searchBar {
+    width: 60%;
+  }
+  body header .searchOptions .form-group {
+    width: 45%;
+  }
+  body .my-modal .my-modal-content {
+    min-height: 50vh;
+  }
+  body .my-modal .my-modal-content .info {
+    padding: 10px;
+  }
+  body .my-modal .my-modal-content .info .title h1 {
+    font-size: 1.6rem;
+  }
+  body .my-modal .my-modal-content .info .title h3 {
+    font-size: 1rem;
+  }
+  body .my-modal .my-modal-content .info h2,
+  body .my-modal .my-modal-content .info h4 {
+    font-size: 1.2rem;
+  }
+  body .my-modal .my-modal-content .info fieldset p {
+    font-size: 0.8rem;
+  }
+  body .my-modal .my-modal-content .info span {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 15px;
+  }
+  body header #searchBar {
+    width: 50%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body header #searchBar #searchInput {
+    width: 80%;
+    margin: 5px auto;
+  }
+  body header #searchBar #searchBtn {
+    width: 40%;
+    margin: 5px auto;
+  }
+  body header #searchBar #searchOpBtn {
+    width: 40%;
+    margin: 5px auto;
+  }
+  body header .searchOptions .form-group {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body header .searchOptions .form-group legend {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0;
+  }
+  body .moviesContainer .movieContainer:hover .movie-info {
+    top: 200px;
+  }
+  body .moviesContainer .movieContainer .movie-img {
+    -webkit-filter: brightness(50%);
+            filter: brightness(50%);
+  }
+  body .moviesContainer .movieContainer .movie-info {
+    top: 200px;
+    left: 0;
+    opacity: 1;
+  }
+  body .my-modal .my-modal-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    min-height: 50vh;
+    overflow: auto;
+  }
+  body .my-modal .my-modal-content .poster-container {
+    width: auto;
+    height: 20%;
+    margin: auto;
+  }
+  body .my-modal .my-modal-content .info {
+    padding: 10px;
+    width: 100%;
+  }
+  body .my-modal .my-modal-content .info .title h1 {
+    font-size: 1.6rem;
+  }
+  body .my-modal .my-modal-content .info .title h3 {
+    font-size: 1rem;
+  }
+  body .my-modal .my-modal-content .info h2,
+  body .my-modal .my-modal-content .info h4 {
+    font-size: 1.2rem;
+  }
+  body .my-modal .my-modal-content .info fieldset p {
+    font-size: 0.8rem;
+  }
+  body .my-modal .my-modal-content .info span {
+    font-size: 1rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
