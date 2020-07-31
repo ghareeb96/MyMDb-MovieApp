@@ -29,7 +29,7 @@ $("#searchBtn").click(() => {
                         <h5 class="title">${movie.Title}</h5>
                         <h6 class="year">${movie.Year}</h6>
                         <h6 class="type">${movie.Type}</h6>
-                        <a id="${movie.imdbID}" class="movie-details btn btn-outline-warning">More details</a>
+                        <a id="${movie.imdbID}" class="movie-details btn btn-secondary">More details</a>
                     </div>
                 </div>
                 `
@@ -76,7 +76,7 @@ $(window).on('scroll', function () {
                         <h5 class="title">${movie.Title}</h5>
                         <h6 class="year">${movie.Year}</h6>
                         <h6 class="type">${movie.Type}</h6>
-                        <a id="${movie.imdbID}" class="movie-details btn btn-outline-warning">More details</a>
+                        <a id="${movie.imdbID}" class="movie-details btn btn-secondary">More details</a>
                     </div>
                 </div>
                 `

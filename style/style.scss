@@ -3,6 +3,8 @@
     src: url(impact.ttf);
 }
 
+$primary-color : rgb(255, 217, 0);
+
 * {
     margin: 0;
     padding: 0;
@@ -12,19 +14,39 @@
 body {
     min-height: 100vh;
     width: 100%;
+    background-color: rgba(0, 0, 0, 1);
+    // background: url(../bg.jpg);
+    // background-position: center;
+    // background-size: cover;
+    // background-attachment: fixed;
+
+    // &::after {
+    //     content: "";
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     height: 100%;
+    //     width: 100%;
+    //     background-color: rgba(0, 0, 0, 0.5);
+    //     z-index: -1;
+    // }
 
     header {
         height: 30vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
         width: 100%;
         background-color: black;
-        border-bottom: 3px solid rgb(255, 208, 0);
+        border-bottom: 3px solid $primary-color;
 
         .logo {
-            background-color: rgb(255, 208, 0);
+            background-color: $primary-color;
             padding: 0.4rem 1rem;
             border-radius: 20px;
 
@@ -60,15 +82,15 @@ body {
         .searchOptions {
             display: flex;
             flex-direction: row;
-            height: 10%;
+            height: 7%;
             width: 80%;
             justify-content: space-evenly;
             align-items: center;
-            position: absolute;
+            position: fixed;
             top: 27vh;
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: rgb(0, 0, 0);
             border-radius: 0 0 20px 20px;
-            border: 1px solid rgb(255, 208, 0);
+            border: 1px solid $primary-color;
             transition: all 0.1s ease-out;
             opacity: 0;
             pointer-events: none;
@@ -92,12 +114,17 @@ body {
 
 
     .moviesContainer {
+        position: absolute;
+        top: 30vh;
+        left: 50%;
+        transform: translateX(-50%);
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(269px, 1fr));
         grid-gap: 2rem;
         width: 90%;
         margin: 10% auto;
         justify-items: center;
+
         // transition: all 0.3s ease-out;
 
         .movieContainer {
@@ -164,20 +191,21 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.658);
         opacity: 0;
+        z-index: 3;
         pointer-events: none;
         transition: all 0.3s ease-out;
 
         .my-modal-content {
             display: flex;
             flex-direction: row;
-            background-color: rgb(68, 68, 68);
+            background-color: rgb(27, 27, 27);
+            border-radius: 20px;
             min-height: 70vh;
             height: auto;
             width: 80%;
             border-radius: 10px;
-            padding: 10px;
 
             .poster-container {
                 width: 30%;
@@ -185,6 +213,7 @@ body {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                background-color: rgb(46, 46, 46);
 
                 img {
                     width: 90%;
@@ -197,26 +226,55 @@ body {
                 padding: 20px;
                 color: white;
                 width: 70%;
-                font-family: 'Lato', sans-serif;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+                padding: 10px;
 
-                span {
-                    font-size: 1.4rem;
+
+                .title {
+                    font-family: 'Roboto Slab', serif;
+
+                    h1 {
+                        margin: 0;
+                        font-weight: bold;
+                        color: $primary-color;
+                    }
+
+                    h3 {
+                        text-transform: capitalize;
+                        font-size: 1.2rem;
+
+                    }
                 }
 
+                h2,
+                h4 {
+                    font-family: 'Roboto Slab', serif;
+                    font-size: 1.6rem;
+                    color: $primary-color;
+
+                }
+
+
                 fieldset {
-                    border: 1px solid black;
+                    border: 1px solid $primary-color;
                     border-radius: 15px;
                     padding: 8px;
                     max-height: 400px;
                     overflow: auto;
 
+
                     p {
                         text-align: justify;
                         font-size: 1.2rem;
                     }
+                }
+
+                span {
+                    font-size: 1.3rem;
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: white;
                 }
             }
 

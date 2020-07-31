@@ -13,10 +13,15 @@
 body {
   min-height: 100vh;
   width: 100%;
+  background-color: black;
 }
 
 body header {
   height: 30vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,11 +37,11 @@ body header {
           justify-content: space-evenly;
   width: 100%;
   background-color: black;
-  border-bottom: 3px solid #ffd000;
+  border-bottom: 3px solid #ffd900;
 }
 
 body header .logo {
-  background-color: #ffd000;
+  background-color: #ffd900;
   padding: 0.4rem 1rem;
   border-radius: 20px;
 }
@@ -80,7 +85,7 @@ body header .searchOptions {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  height: 10%;
+  height: 7%;
   width: 80%;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
@@ -88,11 +93,11 @@ body header .searchOptions {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: absolute;
+  position: fixed;
   top: 27vh;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: black;
   border-radius: 0 0 20px 20px;
-  border: 1px solid #ffd000;
+  border: 1px solid #ffd900;
   -webkit-transition: all 0.1s ease-out;
   transition: all 0.1s ease-out;
   opacity: 0;
@@ -118,6 +123,11 @@ body header .searchOptions.optionsActive {
 }
 
 body .moviesContainer {
+  position: absolute;
+  top: 30vh;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(269px, 1fr))[auto-fit];
@@ -199,8 +209,9 @@ body .my-modal {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.658);
   opacity: 0;
+  z-index: 3;
   pointer-events: none;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
@@ -214,12 +225,12 @@ body .my-modal .my-modal-content {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: #444444;
+  background-color: #1b1b1b;
+  border-radius: 20px;
   min-height: 70vh;
   height: auto;
   width: 80%;
   border-radius: 10px;
-  padding: 10px;
 }
 
 body .my-modal .my-modal-content .poster-container {
@@ -234,6 +245,7 @@ body .my-modal .my-modal-content .poster-container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: #2e2e2e;
 }
 
 body .my-modal .my-modal-content .poster-container img {
@@ -247,7 +259,6 @@ body .my-modal .my-modal-content .info {
   padding: 20px;
   color: white;
   width: 70%;
-  font-family: 'Lato', sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -258,14 +269,33 @@ body .my-modal .my-modal-content .info {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 10px;
 }
 
-body .my-modal .my-modal-content .info span {
-  font-size: 1.4rem;
+body .my-modal .my-modal-content .info .title {
+  font-family: 'Roboto Slab', serif;
+}
+
+body .my-modal .my-modal-content .info .title h1 {
+  margin: 0;
+  font-weight: bold;
+  color: #ffd900;
+}
+
+body .my-modal .my-modal-content .info .title h3 {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+}
+
+body .my-modal .my-modal-content .info h2,
+body .my-modal .my-modal-content .info h4 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.6rem;
+  color: #ffd900;
 }
 
 body .my-modal .my-modal-content .info fieldset {
-  border: 1px solid black;
+  border: 1px solid #ffd900;
   border-radius: 15px;
   padding: 8px;
   max-height: 400px;
@@ -275,6 +305,12 @@ body .my-modal .my-modal-content .info fieldset {
 body .my-modal .my-modal-content .info fieldset p {
   text-align: justify;
   font-size: 1.2rem;
+}
+
+body .my-modal .my-modal-content .info span {
+  font-size: 1.3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
 }
 
 body .my-modal.modal-open {
