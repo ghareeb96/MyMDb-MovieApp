@@ -33,6 +33,7 @@ body {
 
     header {
         height: 30vh;
+        min-height: 240px;
         position: fixed;
         top: 0;
         left: 0;
@@ -64,20 +65,30 @@ body {
 
         #searchBar {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             width: 40%;
             margin: 0 auto;
 
             #searchInput {
-                width: auto;
-                min-width: 50%;
+                width: 100%;
+                margin: 10px auto;
             }
 
-            #searchBtn {
-                width: auto;
-                min-width: 25%;
-                margin-left: auto;
+            .search-btns {
 
+                width: 100%;
+                display: flex;
+
+                #searchBtn {
+                    width: 65%;
+                    min-width: 25%;
+
+                }
+
+                #searchOpBtn {
+                    width: 35%;
+
+                }
             }
         }
 
@@ -291,13 +302,9 @@ body {
 
 @media screen and(max-width : 1100px) {
     body {
-        font-size: 0.8rem;
+        // font-size: 0.8rem;
 
         header {
-            #searchBar {
-                width: 60%;
-            }
-
             .searchOptions {
                 .form-group {
                     width: 45%;
@@ -349,15 +356,24 @@ body {
 @media screen and(max-width : 800px) {
     body {
         header {
-            flex-direction: row;
             padding: 15px;
+
+            .logo {
+                padding: 0.4rem 1rem;
+                border-radius: 20px;
+
+                h1 {
+                    font-size: 3rem;
+                }
+
+            }
 
             #searchBar {
                 width: 50%;
                 flex-direction: column;
 
                 #searchInput {
-                    width: 80%;
+                    // width: 80%;
                     margin: 5px auto;
 
                 }
@@ -389,32 +405,11 @@ body {
             }
         }
 
-        .moviesContainer {
-            .movieContainer {
-                &:hover {
-                    .movie-info {
-                        top: 200px;
-                    }
-                }
-
-                .movie-img {
-                    filter: brightness(50%);
-                }
-
-
-                .movie-info {
-                    top: 200px;
-                    left: 0;
-                    opacity: 1;
-
-                }
-            }
-        }
 
         .my-modal {
             .my-modal-content {
                 flex-direction: column;
-                min-height: 50vh;
+                max-height: 70vh;
                 overflow: auto;
 
                 .poster-container {
@@ -446,6 +441,7 @@ body {
 
 
                     fieldset {
+                        overflow: hidden;
 
                         p {
                             font-size: 0.8rem;
@@ -460,4 +456,41 @@ body {
             }
         }
     }
+}
+
+@media screen and(max-width : 500px) {
+    body {
+        header {
+            min-height: 230px;
+
+            #searchBar {
+                width: 65%;
+            }
+
+            .searchOptions {
+                width: 100%;
+
+                .form-group {
+                    align-items: center;
+
+                    legend {
+                        font-size: 0.8rem;
+                        text-align: center;
+                        margin: 0;
+                    }
+
+                }
+
+                &.optionsActive {
+                    top: 230px;
+
+                }
+            }
+        }
+
+        .moviesContainer {
+            top: 240px;
+        }
+    }
+
 }

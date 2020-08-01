@@ -91,7 +91,7 @@ $("#searchOpBtn").on("click", () => {
 })
 
 $(document).on("click", ".movie-details", function (e) {
-    $.get(`http://www.omdbapi.com/?apikey=7d1c1e6c&i=${e.target.id}&plot=full`).then(response => {
+    $.get(`https://www.omdbapi.com/?apikey=7d1c1e6c&i=${e.target.id}&plot=full`).then(response => {
         let movie = response;
         $(".my-modal").append(
             `<div class="my-modal-content">
