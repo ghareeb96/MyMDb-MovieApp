@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"> -->
     <link rel="stylesheet" href="style/style.css">
     <title>MyMDb</title>
 </head>
@@ -14,20 +16,32 @@
 <body>
 
     <header>
-        <div class="logo">
-            <h1 class="text-center"> <span>My</span>MDb</h1>
-        </div>
-        <div class="form-group" id="searchBar">
-            <input type="text" class="form-control" placeholder="Search Here ..." id="searchInput">
-            <div class="search-btns">
-                <button id="searchBtn" class="btn btn-secondary">Search</button>
-                <button id="searchOpBtn" class="btn btn-sm btn-outline-secondary">Search Options</button>
+        <div class="left-header">
+            <div class="logo">
+                <h1> <span>My</span>MDb</h1>
             </div>
+            <h4 class="logo-desc">Search for your fav. Movie or series and make your own watchlist</h4>
+        </div>
+
+        <div class="right-header">
+            <button class="watched-btn">Watched</button>
+            <button class="watchlist-btn">Watchlist</button>
+            <button class="theme-btn">Change Theme <i class="fa fa-caret-down"></i> </button>
+        </div>
+    </header>
+
+    <!-- !=============================================-->
+
+    <div class="search-container">
+        <div id="search-bar">
+            <input type="text" placeholder="Search Here ..." id="search-input">
+            <button id="search-btn"><i class="fa fa-search"></i> </button>
+            <button href="#" id="searchOpBtn">Options <i class="fa fa-caret-down"></i></button>
         </div>
 
         <div class="searchOptions">
-            <div class="form-group">
-                <legend>Search Type</legend>
+            <div class="search-group" id="search-type">
+                <label for="type">Type</label>
                 <select class="custom-select" id="type">
                     <option value="any">Any</option>
                     <option value="movie">Movie</option>
@@ -35,12 +49,15 @@
                     <option value="episode">Episode</option>
                 </select>
             </div>
-            <div class="form-group">
-                <legend>Release Year</legend>
+            <div class="search-group" id="release-year">
+                <label for="year">Year</label>
                 <input type="number" min="1950" max="2020" class="form-control" placeholder="Year" id="year">
             </div>
         </div>
-    </header>
+    </div>
+
+    <!-- !=============================================-->
+
     <div class="moviesContainer">
     </div>
 

@@ -13,51 +13,31 @@
 body {
   min-height: 100vh;
   width: 100%;
-  background-color: black;
+  background-color: #414141;
 }
 
 body header {
   height: 30vh;
   min-height: 240px;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100%;
   background-color: black;
   border-bottom: 3px solid #ffd900;
 }
 
-body header .logo {
-  background-color: #ffd900;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-}
-
-body header .logo h1 {
-  color: black;
-  font-family: logoFont;
-  font-size: 5rem;
-}
-
-body header .logo h1 span {
-  color: #727272;
-}
-
-body header #searchBar {
+body header .left-header {
+  width: 40%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,32 +45,42 @@ body header #searchBar {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 40%;
-  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
-body header #searchBar #searchInput {
-  width: 100%;
-  margin: 10px auto;
+body header .left-header .logo {
+  background-color: #ffd900;
+  border-radius: 15px;
+  width: 300px;
+  text-align: center;
 }
 
-body header #searchBar .search-btns {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+body header .left-header .logo h1 {
+  color: black;
+  font-family: logoFont;
+  font-size: 5.5rem;
+  font-weight: 500;
 }
 
-body header #searchBar .search-btns #searchBtn {
-  width: 65%;
-  min-width: 25%;
+body header .left-header .logo h1 span {
+  color: #414141;
 }
 
-body header #searchBar .search-btns #searchOpBtn {
-  width: 35%;
+body header .left-header .logo-desc {
+  color: white;
+  font-size: 1.8rem;
+  width: 70%;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-body header .searchOptions {
+body header .right-header {
+  width: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,26 +88,45 @@ body header .searchOptions {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  height: 7%;
-  width: 80%;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: fixed;
-  top: 27vh;
-  background-color: black;
-  border-radius: 0 0 20px 20px;
-  border: 1px solid #ffd900;
-  -webkit-transition: all 0.1s ease-out;
-  transition: all 0.1s ease-out;
-  opacity: 0;
-  pointer-events: none;
 }
 
-body header .searchOptions .form-group {
+body header .right-header button {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  outline: none;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-weight: bold;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  background-color: black;
+  border: 2px solid #ffd900;
+  color: #ffd900;
+}
+
+body header .right-header button:hover {
+  background-color: #ffd900;
+  border: none;
+  color: black;
+}
+
+body .search-container {
+  position: absolute;
+  top: 35vh;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 40%;
+}
+
+body .search-container #search-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -125,19 +134,135 @@ body header .searchOptions .form-group {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 35%;
-  margin: auto;
+  width: 100%;
+  height: 50px;
 }
 
-body header .searchOptions.optionsActive {
-  top: 30vh;
+body .search-container #search-bar #search-input {
+  width: 70%;
+  outline: none;
+  border: none;
+  border-radius: 30px 0 0 30px;
+  padding: 0.5rem 0.8rem;
+  height: 100%;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+body .search-container #search-bar #search-btn {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: white;
+  width: 10%;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  margin: auto 0;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+
+body .search-container #search-bar #search-btn i {
+  font-size: 1.4rem;
+  color: black;
+}
+
+body .search-container #search-bar #search-btn:hover {
+  background-color: black;
+}
+
+body .search-container #search-bar #search-btn:hover i {
+  color: #ffd900;
+}
+
+body .search-container #search-bar #searchOpBtn {
+  color: black;
+  background: none;
+  font-size: 1.2rem;
+  color: #ffd900;
+  height: 100%;
+  cursor: pointer;
+  width: 15%;
+  margin-left: auto;
+  border: none;
+  outline: none;
+}
+
+body .search-container .searchOptions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 70px;
+  margin: 15px auto;
+  background: rgba(255, 217, 0, 0.2);
+  border-radius: 10px;
+  border: 2px solid black;
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+body .search-container .searchOptions .search-group {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+body .search-container .searchOptions .search-group label,
+body .search-container .searchOptions .search-group select,
+body .search-container .searchOptions .search-group input {
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  outline: none;
+}
+
+body .search-container .searchOptions .search-group label {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+body .search-container .searchOptions.optionsActive {
   opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
   pointer-events: all;
 }
 
 body .moviesContainer {
   position: absolute;
-  top: 30vh;
+  top: 40vh;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -156,11 +281,13 @@ body .moviesContainer .movieContainer {
   width: 269px;
   overflow: hidden;
   position: relative;
+  -webkit-box-shadow: 0 10px 20px 0 black;
+          box-shadow: 0 10px 20px 0 black;
 }
 
 body .moviesContainer .movieContainer:hover .movie-img img {
-  -webkit-filter: blur(2px) brightness(50%);
-          filter: blur(2px) brightness(50%);
+  -webkit-filter: blur(2px) brightness(40%);
+          filter: blur(2px) brightness(40%);
 }
 
 body .moviesContainer .movieContainer:hover .movie-info {
@@ -205,6 +332,33 @@ body .moviesContainer .movieContainer .movie-info {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), black);
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body .moviesContainer .movieContainer .movie-info h5 {
+  font-size: 1.7rem;
+  color: #ffd900;
+}
+
+body .moviesContainer .movieContainer .movie-info h6 {
+  font-size: 1.3rem;
+}
+
+body .moviesContainer .movieContainer .movie-info button {
+  height: 50px;
+  width: 90%;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  padding: 0 0.8rem;
+  margin: 10px auto;
+  background-color: #ffd900;
+  color: black;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 body .my-modal {

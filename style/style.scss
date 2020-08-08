@@ -4,6 +4,8 @@
 }
 
 $primary-color : rgb(255, 217, 0);
+$secondary-color : rgb(65, 65, 65);
+$tertiary-color : rgb(0, 0, 0);
 
 * {
     margin: 0;
@@ -14,111 +16,203 @@ $primary-color : rgb(255, 217, 0);
 body {
     min-height: 100vh;
     width: 100%;
-    background-color: rgba(0, 0, 0, 1);
-    // background: url(../bg.jpg);
-    // background-position: center;
-    // background-size: cover;
-    // background-attachment: fixed;
-
-    // &::after {
-    //     content: "";
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     height: 100%;
-    //     width: 100%;
-    //     background-color: rgba(0, 0, 0, 0.5);
-    //     z-index: -1;
-    // }
+    background-color: $secondary-color;
 
     header {
         height: 30vh;
         min-height: 240px;
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         z-index: 2;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
+        flex-direction: row;
         width: 100%;
-        background-color: black;
+        background-color: $tertiary-color;
         border-bottom: 3px solid $primary-color;
 
-        .logo {
-            background-color: $primary-color;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-
-            h1 {
-                color: black;
-                font-family: logoFont;
-                font-size: 5rem;
-
-                span {
-                    color: rgb(114, 114, 114);
-                }
-            }
-
-        }
-
-        #searchBar {
+        .left-header {
+            width: 40%;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            width: 40%;
-            margin: 0 auto;
+            align-items: center;
+            justify-content: space-evenly;
 
-            #searchInput {
-                width: 100%;
-                margin: 10px auto;
+            .logo {
+                background-color: $primary-color;
+                // padding: 0.4rem 1rem;
+                border-radius: 15px;
+                width: 300px;
+                text-align: center;
+
+                h1 {
+                    color: $tertiary-color;
+                    font-family: logoFont;
+                    font-size: 5.5rem;
+                    font-weight: 500;
+
+
+                    span {
+                        color: $secondary-color;
+                    }
+                }
+
+
             }
 
-            .search-btns {
+            .logo-desc {
+                color: white;
+                font-size: 1.8rem;
+                width: 70%;
+                text-align: center;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
-                width: 100%;
+            }
+        }
+
+
+        .right-header {
+            width: 60%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+
+            button {
+                font-size: 1.5rem;
+                padding: 1rem 2rem;
+                border-radius: 10px;
+                outline: none;
+                letter-spacing: 2px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: all 0.2s ease-out;
+                background-color: $tertiary-color;
+                border: 2px solid $primary-color;
+                color: $primary-color;
+
+                &:hover {
+                    background-color: $primary-color;
+                    border: none;
+                    color: $tertiary-color;
+
+
+                }
+            }
+        }
+    }
+
+    .search-container {
+        position: absolute;
+        top: 35vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40%;
+
+        #search-bar {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 50px;
+
+            #search-input {
+                width: 70%;
+                outline: none;
+                border: none;
+                border-radius: 30px 0 0 30px;
+                padding: 0.5rem 0.8rem;
+                height: 100%;
+                font-size: 1.3rem;
+                margin: 0;
+            }
+
+            #search-btn {
+                height: 100%;
                 display: flex;
+                align-items: center;
+                justify-content: center;
+                background: white;
+                width: 10%;
+                border: none;
+                outline: none;
+                text-decoration: none;
+                margin: auto 0;
+                transition: all 0.2s ease-out;
+                cursor: pointer;
 
-                #searchBtn {
-                    width: 65%;
-                    min-width: 25%;
-
+                i {
+                    font-size: 1.4rem;
+                    color: $tertiary-color;
                 }
 
-                #searchOpBtn {
-                    width: 35%;
+                &:hover {
+                    background-color: $tertiary-color;
 
+                    i {
+                        color: $primary-color;
+                    }
                 }
+
+            }
+
+            #searchOpBtn {
+                color: $tertiary-color;
+                background: none;
+                font-size: 1.2rem;
+                color: $primary-color;
+                height: 100%;
+                cursor: pointer;
+                width: 15%;
+                margin-left: auto;
+                border: none;
+                outline: none;
             }
         }
 
         .searchOptions {
             display: flex;
             flex-direction: row;
-            height: 7%;
-            width: 80%;
+            width: 100%;
             justify-content: space-evenly;
             align-items: center;
-            position: fixed;
-            top: 27vh;
-            background-color: rgb(0, 0, 0);
-            border-radius: 0 0 20px 20px;
-            border: 1px solid $primary-color;
-            transition: all 0.1s ease-out;
+            min-height: 70px;
+            margin: 15px auto;
+            background: rgba($primary-color, 0.2);
+            border-radius: 10px;
+            border: 2px solid $tertiary-color;
+            transform: translateY(-30px);
             opacity: 0;
             pointer-events: none;
+            transition: all 0.2s ease-out;
 
-            .form-group {
+            .search-group {
+                width: 50%;
                 display: flex;
                 flex-direction: row;
-                width: 35%;
-                margin: auto;
+                justify-content: space-evenly;
+
+                label,
+                select,
+                input {
+                    font-size: 1.3rem;
+                    padding: 0.5rem;
+                    border-radius: 5px;
+                    outline: none;
+                }
+
+                label {
+                    font-size: 1.8rem;
+                    font-weight: bold;
+                }
             }
 
             &.optionsActive {
-                top: 30vh;
                 opacity: 1;
+                transform: translateY(0);
                 pointer-events: all;
+
+
             }
         }
     }
@@ -126,9 +220,11 @@ body {
 
 
 
+
+
     .moviesContainer {
         position: absolute;
-        top: 30vh;
+        top: 40vh;
         left: 50%;
         transform: translateX(-50%);
         display: grid;
@@ -146,12 +242,13 @@ body {
             overflow: hidden;
             // transition: all 0.3s ease-in-out;
             position: relative;
+            box-shadow: 0 10px 20px 0 black;
 
             &:hover {
                 .movie-img {
 
                     img {
-                        filter: blur(2px) brightness(50%);
+                        filter: blur(2px) brightness(40%);
 
                     }
                 }
@@ -189,6 +286,34 @@ body {
                 color: white;
                 background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
                 transition: all 0.2s ease-out;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+                h5 {
+                    font-size: 1.7rem;
+                    color: $primary-color;
+                }
+
+                h6 {
+                    font-size: 1.3rem;
+                }
+
+                button {
+                    height: 50px;
+                    width: 90%;
+                    font-size: 1.4rem;
+                    letter-spacing: 2px;
+                    padding: 0 0.8rem;
+                    margin: 10px auto;
+                    background-color: $primary-color;
+                    color: $tertiary-color;
+                    font-weight: bold;
+                    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    border-radius: 5px;
+
+                }
 
 
             }

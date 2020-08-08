@@ -1,9 +1,9 @@
 let url = "https://www.omdbapi.com/?apikey=7d1c1e6c";
 let page;
 const noPic = "https://upload.wikimedia.org/wikipedia/en/6/60/No_Picture.jpg";
-$("#searchBtn").click(() => {
+$("#search-btn").click(() => {
         page = 1;
-        newUrl = url + "&s=" + $("#searchInput").val() + "&page=" + page;
+        newUrl = url + "&s=" + $("#search-input").val() + "&page=" + page;
         if ($(".searchOptions").hasClass("optionsActive")) {
             if ($("#type").val() != "any") {
                 newUrl += "&type=" + $("#type").val();
@@ -28,7 +28,7 @@ $("#searchBtn").click(() => {
                         <h5 class="title">${movie.Title}</h5>
                         <h6 class="year">${movie.Year}</h6>
                         <h6 class="type">${movie.Type}</h6>
-                        <a id="${movie.imdbID}" class="movie-details btn btn-secondary">More details</a>
+                        <button id="${movie.imdbID}" class="movie-details">More details</button>
                     </div>
                 </div>
                 `
@@ -53,7 +53,7 @@ $(window).on('scroll', function () {
     // console.log(scrollPosition);
     // console.log(divTotalHeight);
     if (scrollPosition >= divTotalHeight) {
-        newUrl = url + "&s=" + $("#searchInput").val() + "&page=" + page;
+        newUrl = url + "&s=" + $("#search-input").val() + "&page=" + page;
         if ($(".searchOptions").hasClass("optionsActive")) {
             if ($("#type").val() != "any") {
                 newUrl += "&type=" + $("#type").val();
@@ -75,14 +75,14 @@ $(window).on('scroll', function () {
                         <h5 class="title">${movie.Title}</h5>
                         <h6 class="year">${movie.Year}</h6>
                         <h6 class="type">${movie.Type}</h6>
-                        <a id="${movie.imdbID}" class="movie-details btn btn-secondary">More details</a>
+                        <button id="${movie.imdbID}" class="movie-details">More details</button>
                     </div>
                 </div>
                 `
                 );
             })
-            page++;
         })
+        page++;
     }
 });
 
