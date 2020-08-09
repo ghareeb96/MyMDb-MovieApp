@@ -13,16 +13,44 @@
 body {
   min-height: 100vh;
   width: 100%;
-  background-color: #414141;
 }
 
-body header {
-  height: 30vh;
-  min-height: 240px;
+body .bg {
+  background: url(../header-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  z-index: -2;
+  height: 100%;
+  width: 100%;
+}
+
+body .bg::after {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(16, 24, 32, 0.8);
+  z-index: -1;
+}
+
+body nav {
+  background-color: #101820;
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 2;
+}
+
+body nav .nav-container {
+  width: 80%;
+  height: 100%;
+  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,14 +58,90 @@ body header {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 100%;
-  background-color: black;
-  border-bottom: 3px solid #ffd900;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-body header .left-header {
-  width: 40%;
-  height: 100%;
+body nav .nav-container .logo-container .logo {
+  background-color: #fdc325;
+  border-radius: 8px;
+  width: 150px;
+  text-align: center;
+  height: 55px;
+  line-height: 55px;
+}
+
+body nav .nav-container .logo-container .logo h1 {
+  color: black;
+  font-family: logoFont;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+body nav .nav-container .logo-container .logo h1 span {
+  color: #4d4d4d;
+}
+
+body nav .nav-container .nav-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+body nav .nav-container .nav-btns button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  outline: none;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-weight: bold;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  background-color: #101820;
+  border: none;
+  color: #f2aa4c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body nav .nav-container .nav-btns button:hover {
+  background-color: #f2aa4c;
+  border: none;
+  color: #101820;
+}
+
+body header {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+body header .slogan {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,82 +155,62 @@ body header .left-header {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 25vh;
 }
 
-body header .left-header .logo {
-  background-color: #ffd900;
-  border-radius: 15px;
-  width: 300px;
-  text-align: center;
-}
-
-body header .left-header .logo h1 {
-  color: black;
-  font-family: logoFont;
-  font-size: 5.5rem;
-  font-weight: 500;
-}
-
-body header .left-header .logo h1 span {
-  color: #414141;
-}
-
-body header .left-header .logo-desc {
+body header .slogan h2 {
   color: white;
-  font-size: 1.8rem;
-  width: 70%;
-  text-align: center;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 4rem;
+  font-family: monospace;
+  letter-spacing: 2px;
 }
 
-body header .right-header {
-  width: 60%;
+body header .start-btn {
+  position: absolute;
+  top: 70%;
+  -webkit-transform: translate(0, -70%);
+          transform: translate(0, -70%);
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-body header .right-header button {
-  font-size: 1.5rem;
-  padding: 1rem 2rem;
-  border-radius: 10px;
-  outline: none;
-  letter-spacing: 2px;
-  cursor: pointer;
+body header .start-btn button {
+  font-size: 3rem;
+  font-family: monospace;
   font-weight: bold;
+  letter-spacing: 2px;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #f2aa4c;
+  outline: none;
+  background: #101820;
+  color: #f2aa4c;
+  cursor: pointer;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
-  background-color: black;
-  border: 2px solid #ffd900;
-  color: #ffd900;
 }
 
-body header .right-header button:hover {
-  background-color: #ffd900;
-  border: none;
-  color: black;
+body header .start-btn button:hover {
+  color: #101820;
+  background-color: #f2aa4c;
 }
 
-body .search-container {
-  position: absolute;
-  top: 35vh;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+body main {
+  min-height: 70vh;
+}
+
+body main .search-container {
   width: 40%;
+  margin: auto;
 }
 
-body .search-container #search-bar {
+body main .search-container #search-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -138,7 +222,7 @@ body .search-container #search-bar {
   height: 50px;
 }
 
-body .search-container #search-bar #search-input {
+body main .search-container #search-bar #search-input {
   width: 70%;
   outline: none;
   border: none;
@@ -149,7 +233,7 @@ body .search-container #search-bar #search-input {
   margin: 0;
 }
 
-body .search-container #search-bar #search-btn {
+body main .search-container #search-bar #search-btn {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -171,24 +255,32 @@ body .search-container #search-bar #search-btn {
   cursor: pointer;
 }
 
-body .search-container #search-bar #search-btn i {
-  font-size: 1.4rem;
-  color: black;
+body main .search-container #search-bar #search-btn i {
+  font-size: 2rem;
+  color: #101820;
 }
 
-body .search-container #search-bar #search-btn:hover {
-  background-color: black;
+body main .search-container #search-bar #search-btn:hover {
+  background-color: #101820;
 }
 
-body .search-container #search-bar #search-btn:hover i {
-  color: #ffd900;
+body main .search-container #search-bar #search-btn:hover i {
+  color: #f2aa4c;
 }
 
-body .search-container #search-bar #searchOpBtn {
-  color: black;
+body main .search-container #search-bar #searchOpBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #f2aa4c;
   background: none;
   font-size: 1.2rem;
-  color: #ffd900;
   height: 100%;
   cursor: pointer;
   width: 15%;
@@ -197,7 +289,7 @@ body .search-container #search-bar #searchOpBtn {
   outline: none;
 }
 
-body .search-container .searchOptions {
+body main .search-container .searchOptions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -214,9 +306,9 @@ body .search-container .searchOptions {
           align-items: center;
   min-height: 70px;
   margin: 15px auto;
-  background: rgba(255, 217, 0, 0.2);
+  background: rgba(16, 24, 32, 0.8);
   border-radius: 10px;
-  border: 2px solid black;
+  border: 2px solid #f2aa4c;
   -webkit-transform: translateY(-30px);
           transform: translateY(-30px);
   opacity: 0;
@@ -225,7 +317,7 @@ body .search-container .searchOptions {
   transition: all 0.2s ease-out;
 }
 
-body .search-container .searchOptions .search-group {
+body main .search-container .searchOptions .search-group {
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -239,33 +331,30 @@ body .search-container .searchOptions .search-group {
           justify-content: space-evenly;
 }
 
-body .search-container .searchOptions .search-group label,
-body .search-container .searchOptions .search-group select,
-body .search-container .searchOptions .search-group input {
+body main .search-container .searchOptions .search-group label,
+body main .search-container .searchOptions .search-group select,
+body main .search-container .searchOptions .search-group input {
   font-size: 1.3rem;
   padding: 0.5rem;
   border-radius: 5px;
   outline: none;
+  border: none;
 }
 
-body .search-container .searchOptions .search-group label {
+body main .search-container .searchOptions .search-group label {
   font-size: 1.8rem;
   font-weight: bold;
+  color: #f2aa4c;
 }
 
-body .search-container .searchOptions.optionsActive {
+body main .search-container .searchOptions.optionsActive {
   opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0);
   pointer-events: all;
 }
 
-body .moviesContainer {
-  position: absolute;
-  top: 40vh;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+body main .moviesContainer {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(269px, 1fr))[auto-fit];
@@ -276,7 +365,7 @@ body .moviesContainer {
   justify-items: center;
 }
 
-body .moviesContainer .movieContainer {
+body main .moviesContainer .movieContainer {
   height: 400px;
   width: 269px;
   overflow: hidden;
@@ -285,31 +374,31 @@ body .moviesContainer .movieContainer {
           box-shadow: 0 10px 20px 0 black;
 }
 
-body .moviesContainer .movieContainer:hover .movie-img img {
+body main .moviesContainer .movieContainer:hover .movie-img img {
   -webkit-filter: blur(2px) brightness(40%);
           filter: blur(2px) brightness(40%);
 }
 
-body .moviesContainer .movieContainer:hover .movie-info {
+body main .moviesContainer .movieContainer:hover .movie-info {
   top: 200px;
   opacity: 1;
 }
 
-body .moviesContainer .movieContainer .movie-img {
+body main .moviesContainer .movieContainer .movie-img {
   width: 100%;
   height: 100%;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 
-body .moviesContainer .movieContainer .movie-img img {
+body main .moviesContainer .movieContainer .movie-img img {
   width: 100%;
   height: 100%;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 
-body .moviesContainer .movieContainer .movie-info {
+body main .moviesContainer .movieContainer .movie-info {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -335,24 +424,23 @@ body .moviesContainer .movieContainer .movie-info {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-body .moviesContainer .movieContainer .movie-info h5 {
+body main .moviesContainer .movieContainer .movie-info h5 {
   font-size: 1.7rem;
-  color: #ffd900;
+  color: #101820;
 }
 
-body .moviesContainer .movieContainer .movie-info h6 {
+body main .moviesContainer .movieContainer .movie-info h6 {
   font-size: 1.3rem;
 }
 
-body .moviesContainer .movieContainer .movie-info button {
+body main .moviesContainer .movieContainer .movie-info button {
   height: 50px;
   width: 90%;
   font-size: 1.4rem;
   letter-spacing: 2px;
   padding: 0 0.8rem;
   margin: 10px auto;
-  background-color: #ffd900;
-  color: black;
+  background-color: #101820;
   font-weight: bold;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   border: none;
@@ -445,7 +533,7 @@ body .my-modal .my-modal-content .info .title {
 body .my-modal .my-modal-content .info .title h1 {
   margin: 0;
   font-weight: bold;
-  color: #ffd900;
+  color: #101820;
 }
 
 body .my-modal .my-modal-content .info .title h3 {
@@ -457,11 +545,11 @@ body .my-modal .my-modal-content .info h2,
 body .my-modal .my-modal-content .info h4 {
   font-family: 'Roboto Slab', serif;
   font-size: 1.6rem;
-  color: #ffd900;
+  color: #101820;
 }
 
 body .my-modal .my-modal-content .info fieldset {
-  border: 1px solid #ffd900;
+  border: 1px solid #101820;
   border-radius: 15px;
   padding: 8px;
   max-height: 400px;
@@ -485,73 +573,73 @@ body .my-modal.modal-open {
 }
 
 @media screen and (max-width: 1100px) {
-  body header .searchOptions .form-group {
+  body body header .searchOptions .form-group {
     width: 45%;
   }
-  body .my-modal .my-modal-content {
+  body body .my-modal .my-modal-content {
     min-height: 50vh;
   }
-  body .my-modal .my-modal-content .info {
+  body body .my-modal .my-modal-content .info {
     padding: 10px;
   }
-  body .my-modal .my-modal-content .info .title h1 {
+  body body .my-modal .my-modal-content .info .title h1 {
     font-size: 1.6rem;
   }
-  body .my-modal .my-modal-content .info .title h3 {
+  body body .my-modal .my-modal-content .info .title h3 {
     font-size: 1rem;
   }
-  body .my-modal .my-modal-content .info h2,
-  body .my-modal .my-modal-content .info h4 {
+  body body .my-modal .my-modal-content .info h2,
+  body body .my-modal .my-modal-content .info h4 {
     font-size: 1.2rem;
   }
-  body .my-modal .my-modal-content .info fieldset p {
+  body body .my-modal .my-modal-content .info fieldset p {
     font-size: 0.8rem;
   }
-  body .my-modal .my-modal-content .info span {
+  body body .my-modal .my-modal-content .info span {
     font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 800px) {
-  body header {
+  body body header {
     padding: 15px;
   }
-  body header .logo {
+  body body header .logo {
     padding: 0.4rem 1rem;
     border-radius: 20px;
   }
-  body header .logo h1 {
+  body body header .logo h1 {
     font-size: 3rem;
   }
-  body header #searchBar {
+  body body header #searchBar {
     width: 50%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  body header #searchBar #searchInput {
+  body body header #searchBar #searchInput {
     margin: 5px auto;
   }
-  body header #searchBar #searchBtn {
+  body body header #searchBar #searchBtn {
     width: 40%;
     margin: 5px auto;
   }
-  body header #searchBar #searchOpBtn {
+  body body header #searchBar #searchOpBtn {
     width: 40%;
     margin: 5px auto;
   }
-  body header .searchOptions .form-group {
+  body body header .searchOptions .form-group {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
-  body header .searchOptions .form-group legend {
+  body body header .searchOptions .form-group legend {
     font-size: 1rem;
     text-align: center;
     margin: 0;
   }
-  body .my-modal .my-modal-content {
+  body body .my-modal .my-modal-content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -559,60 +647,60 @@ body .my-modal.modal-open {
     max-height: 70vh;
     overflow: auto;
   }
-  body .my-modal .my-modal-content .poster-container {
+  body body .my-modal .my-modal-content .poster-container {
     width: auto;
     height: 20%;
     margin: auto;
   }
-  body .my-modal .my-modal-content .info {
+  body body .my-modal .my-modal-content .info {
     padding: 10px;
     width: 100%;
   }
-  body .my-modal .my-modal-content .info .title h1 {
+  body body .my-modal .my-modal-content .info .title h1 {
     font-size: 1.6rem;
   }
-  body .my-modal .my-modal-content .info .title h3 {
+  body body .my-modal .my-modal-content .info .title h3 {
     font-size: 1rem;
   }
-  body .my-modal .my-modal-content .info h2,
-  body .my-modal .my-modal-content .info h4 {
+  body body .my-modal .my-modal-content .info h2,
+  body body .my-modal .my-modal-content .info h4 {
     font-size: 1.2rem;
   }
-  body .my-modal .my-modal-content .info fieldset {
+  body body .my-modal .my-modal-content .info fieldset {
     overflow: hidden;
   }
-  body .my-modal .my-modal-content .info fieldset p {
+  body body .my-modal .my-modal-content .info fieldset p {
     font-size: 0.8rem;
   }
-  body .my-modal .my-modal-content .info span {
+  body body .my-modal .my-modal-content .info span {
     font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 500px) {
-  body header {
+  body body header {
     min-height: 230px;
   }
-  body header #searchBar {
+  body body header #searchBar {
     width: 65%;
   }
-  body header .searchOptions {
+  body body header .searchOptions {
     width: 100%;
   }
-  body header .searchOptions .form-group {
+  body body header .searchOptions .form-group {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
-  body header .searchOptions .form-group legend {
+  body body header .searchOptions .form-group legend {
     font-size: 0.8rem;
     text-align: center;
     margin: 0;
   }
-  body header .searchOptions.optionsActive {
+  body body header .searchOptions.optionsActive {
     top: 230px;
   }
-  body .moviesContainer {
+  body body .moviesContainer {
     top: 240px;
   }
 }
