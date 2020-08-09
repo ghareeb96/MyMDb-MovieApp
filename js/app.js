@@ -95,8 +95,14 @@ $(document).on("click", ".movie-details", function (e) {
         let movie = response;
         $(".my-modal").append(
             `<div class="my-modal-content">
-                <div class="poster-container">
-                    <img src="${movie.Poster}" alt="">
+                <div class ="left-modal">   
+                    <div class="poster-container">
+                        <img src="${movie.Poster}" alt="">
+                    </div>
+                    <div class ="modal-btns">
+                        <button id ="modal-watched"><i class="material-icons">check_box</i> &nbsp; Watched</button>
+                        <button id ="modal-watchlist"><i class="material-icons">playlist_add</i>&nbsp; Add to Watchlist</button>
+                    </div>
                 </div>
                 <div class="info">
                     <div class="title">

@@ -462,6 +462,12 @@ body main .moviesContainer .movieContainer .movie-info button {
   outline: none;
   cursor: pointer;
   border-radius: 5px;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+body main .moviesContainer .movieContainer .movie-info button:hover {
+  background-color: #ef931c;
 }
 
 body .my-modal {
@@ -503,9 +509,21 @@ body .my-modal .my-modal-content {
   border-radius: 10px;
 }
 
-body .my-modal .my-modal-content .poster-container {
+body .my-modal .my-modal-content .left-modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 30%;
-  height: auto;
+  background-color: #1e2c3b;
+}
+
+body .my-modal .my-modal-content .left-modal .poster-container {
+  width: 100%;
+  min-height: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -515,14 +533,68 @@ body .my-modal .my-modal-content .poster-container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #1e2c3b;
 }
 
-body .my-modal .my-modal-content .poster-container img {
-  width: 90%;
-  height: 90%;
+body .my-modal .my-modal-content .left-modal .poster-container img {
+  width: 100%;
+  height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+body .my-modal .my-modal-content .left-modal .modal-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+  height: 20%;
+}
+
+body .my-modal .my-modal-content .left-modal .modal-btns button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  font-size: 1.4rem;
+  background-color: #f2aa4c;
+  color: #101820;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  outline: none;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+}
+
+body .my-modal .my-modal-content .left-modal .modal-btns button:hover {
+  background-color: #ef931c;
+}
+
+body .my-modal .my-modal-content .left-modal .modal-btns button i {
+  font-size: 1.8rem;
 }
 
 body .my-modal .my-modal-content .info {
