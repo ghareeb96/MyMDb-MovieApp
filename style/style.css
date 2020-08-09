@@ -70,6 +70,10 @@ body nav .nav-container {
           justify-content: space-between;
 }
 
+body nav .nav-container .logo-container {
+  text-decoration: none;
+}
+
 body nav .nav-container .logo-container .logo {
   background-color: #fdc325;
   border-radius: 8px;
@@ -77,6 +81,7 @@ body nav .nav-container .logo-container .logo {
   text-align: center;
   height: 55px;
   line-height: 55px;
+  cursor: pointer;
 }
 
 body nav .nav-container .logo-container .logo h1 {
@@ -103,8 +108,9 @@ body nav .nav-container .nav-btns {
           justify-content: space-evenly;
 }
 
-body nav .nav-container .nav-btns button {
-  font-size: 1rem;
+body nav .nav-container .nav-btns a {
+  text-decoration: none;
+  font-size: 1.1rem;
   padding: 0.5rem 1rem;
   border-radius: 6px;
   outline: none;
@@ -127,7 +133,13 @@ body nav .nav-container .nav-btns button {
           justify-content: space-between;
 }
 
-body nav .nav-container .nav-btns button:hover {
+body nav .nav-container .nav-btns a:hover {
+  background-color: #f2aa4c;
+  border: none;
+  color: #101820;
+}
+
+body nav .nav-container .nav-btns a.active {
   background-color: #f2aa4c;
   border: none;
   color: #101820;
@@ -166,6 +178,13 @@ body header .slogan {
 body header .slogan h2 {
   color: white;
   font-size: 4rem;
+  font-family: monospace;
+  letter-spacing: 2px;
+}
+
+body header .slogan h1 {
+  color: white;
+  font-size: 5rem;
   font-family: monospace;
   letter-spacing: 2px;
 }
@@ -485,7 +504,7 @@ body .my-modal {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
   opacity: 0;
   z-index: 3;
   pointer-events: none;
@@ -502,11 +521,12 @@ body .my-modal .my-modal-content {
       -ms-flex-direction: row;
           flex-direction: row;
   background-color: #101820;
-  border-radius: 20px;
   min-height: 70vh;
   height: auto;
   width: 80%;
   border-radius: 10px;
+  -webkit-box-shadow: 0 5px 30px 0 rgba(255, 255, 255, 0.308);
+          box-shadow: 0 5px 30px 0 rgba(255, 255, 255, 0.308);
 }
 
 body .my-modal .my-modal-content .left-modal {
@@ -519,6 +539,7 @@ body .my-modal .my-modal-content .left-modal {
           flex-direction: column;
   width: 30%;
   background-color: #1e2c3b;
+  border-radius: 10px 0 0 10px;
 }
 
 body .my-modal .my-modal-content .left-modal .poster-container {
