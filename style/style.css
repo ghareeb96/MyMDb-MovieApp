@@ -10,6 +10,10 @@
           box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
   width: 100%;
@@ -180,7 +184,8 @@ body header .start-btn {
           justify-content: center;
 }
 
-body header .start-btn button {
+body header .start-btn a {
+  text-decoration: none;
   font-size: 3rem;
   font-family: monospace;
   font-weight: bold;
@@ -196,7 +201,7 @@ body header .start-btn button {
   transition: all 0.2s ease-out;
 }
 
-body header .start-btn button:hover {
+body header .start-btn a:hover {
   color: #101820;
   background-color: #f2aa4c;
 }
@@ -205,12 +210,23 @@ body main {
   min-height: 70vh;
 }
 
-body main .search-container {
+body main #search-container {
   width: 40%;
   margin: auto;
+  min-height: 40vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
-body main .search-container #search-bar {
+body main #search-container #search-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -222,7 +238,7 @@ body main .search-container #search-bar {
   height: 50px;
 }
 
-body main .search-container #search-bar #search-input {
+body main #search-container #search-bar #search-input {
   width: 70%;
   outline: none;
   border: none;
@@ -233,7 +249,7 @@ body main .search-container #search-bar #search-input {
   margin: 0;
 }
 
-body main .search-container #search-bar #search-btn {
+body main #search-container #search-bar #search-btn {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -255,20 +271,20 @@ body main .search-container #search-bar #search-btn {
   cursor: pointer;
 }
 
-body main .search-container #search-bar #search-btn i {
+body main #search-container #search-bar #search-btn i {
   font-size: 2rem;
   color: #101820;
 }
 
-body main .search-container #search-bar #search-btn:hover {
+body main #search-container #search-bar #search-btn:hover {
   background-color: #101820;
 }
 
-body main .search-container #search-bar #search-btn:hover i {
+body main #search-container #search-bar #search-btn:hover i {
   color: #f2aa4c;
 }
 
-body main .search-container #search-bar #searchOpBtn {
+body main #search-container #search-bar #searchOpBtn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -289,7 +305,7 @@ body main .search-container #search-bar #searchOpBtn {
   outline: none;
 }
 
-body main .search-container .searchOptions {
+body main #search-container .searchOptions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -317,7 +333,7 @@ body main .search-container .searchOptions {
   transition: all 0.2s ease-out;
 }
 
-body main .search-container .searchOptions .search-group {
+body main #search-container .searchOptions .search-group {
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -331,9 +347,9 @@ body main .search-container .searchOptions .search-group {
           justify-content: space-evenly;
 }
 
-body main .search-container .searchOptions .search-group label,
-body main .search-container .searchOptions .search-group select,
-body main .search-container .searchOptions .search-group input {
+body main #search-container .searchOptions .search-group label,
+body main #search-container .searchOptions .search-group select,
+body main #search-container .searchOptions .search-group input {
   font-size: 1.3rem;
   padding: 0.5rem;
   border-radius: 5px;
@@ -341,13 +357,13 @@ body main .search-container .searchOptions .search-group input {
   border: none;
 }
 
-body main .search-container .searchOptions .search-group label {
+body main #search-container .searchOptions .search-group label {
   font-size: 1.8rem;
   font-weight: bold;
   color: #f2aa4c;
 }
 
-body main .search-container .searchOptions.optionsActive {
+body main #search-container .searchOptions.optionsActive {
   opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0);
@@ -370,8 +386,8 @@ body main .moviesContainer .movieContainer {
   width: 269px;
   overflow: hidden;
   position: relative;
-  -webkit-box-shadow: 0 10px 20px 0 black;
-          box-shadow: 0 10px 20px 0 black;
+  -webkit-box-shadow: 0 5px 20px 0 #525252;
+          box-shadow: 0 5px 20px 0 #525252;
 }
 
 body main .moviesContainer .movieContainer:hover .movie-img img {
@@ -425,12 +441,11 @@ body main .moviesContainer .movieContainer .movie-info {
 }
 
 body main .moviesContainer .movieContainer .movie-info h5 {
-  font-size: 1.7rem;
-  color: #101820;
+  font-size: 1.6rem;
 }
 
 body main .moviesContainer .movieContainer .movie-info h6 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 body main .moviesContainer .movieContainer .movie-info button {
@@ -440,7 +455,7 @@ body main .moviesContainer .movieContainer .movie-info button {
   letter-spacing: 2px;
   padding: 0 0.8rem;
   margin: 10px auto;
-  background-color: #101820;
+  background-color: #f2aa4c;
   font-weight: bold;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   border: none;
@@ -464,7 +479,7 @@ body .my-modal {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: rgba(0, 0, 0, 0.658);
+  background-color: rgba(0, 0, 0, 0.6);
   opacity: 0;
   z-index: 3;
   pointer-events: none;
@@ -480,7 +495,7 @@ body .my-modal .my-modal-content {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: #1b1b1b;
+  background-color: #101820;
   border-radius: 20px;
   min-height: 70vh;
   height: auto;
@@ -500,7 +515,7 @@ body .my-modal .my-modal-content .poster-container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #2e2e2e;
+  background-color: #1e2c3b;
 }
 
 body .my-modal .my-modal-content .poster-container img {
@@ -533,7 +548,7 @@ body .my-modal .my-modal-content .info .title {
 body .my-modal .my-modal-content .info .title h1 {
   margin: 0;
   font-weight: bold;
-  color: #101820;
+  color: #f2aa4c;
 }
 
 body .my-modal .my-modal-content .info .title h3 {
@@ -545,11 +560,11 @@ body .my-modal .my-modal-content .info h2,
 body .my-modal .my-modal-content .info h4 {
   font-family: 'Roboto Slab', serif;
   font-size: 1.6rem;
-  color: #101820;
+  color: #f2aa4c;
 }
 
 body .my-modal .my-modal-content .info fieldset {
-  border: 1px solid #101820;
+  border: 1px solid #f2aa4c;
   border-radius: 15px;
   padding: 8px;
   max-height: 400px;
