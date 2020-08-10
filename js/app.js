@@ -1,5 +1,15 @@
 let url = "https://www.omdbapi.com/?apikey=7d1c1e6c";
 let page;
+let movieID;
+
+class Movie {
+    constructor(id, watched, watchlist) {
+        this.id = id;
+        this.watched = watched;
+        this.watchlist = watchlist;
+    }
+}
+
 const noPic = "https://upload.wikimedia.org/wikipedia/en/6/60/No_Picture.jpg";
 $("#search-btn").click(() => {
         page = 1;
@@ -50,8 +60,7 @@ $("#search-btn").click(() => {
 $(window).on('scroll', function () {
     var scrollPosition = $(window).scrollTop() + $(window).outerHeight();
     var divTotalHeight = $(".moviesContainer")[0].scrollHeight + $(".moviesContainer")[0].offsetTop + parseInt($(".moviesContainer").css("margin-bottom"));
-    // console.log(scrollPosition);
-    // console.log(divTotalHeight);
+
     if (scrollPosition >= divTotalHeight) {
         newUrl = url + "&s=" + $("#search-input").val() + "&page=" + page;
         if ($(".searchOptions").hasClass("optionsActive")) {
@@ -91,7 +100,42 @@ $("#searchOpBtn").on("click", () => {
 })
 
 $(document).on("click", ".movie-details", function (e) {
+
+    /* ${checkMovie(movieID, watchedMovies)? "class =watched" : "" } */
+
     $.get(`https://www.omdbapi.com/?apikey=7d1c1e6c&i=${e.target.id}&plot=full`).then(response => {
+        movieID = e.target.id;
+        let watchedClass = "",
+            watchlistClass = "",
+            watchedText = "Add to Watched",
+            watchlistText = "Add to Watchlist";
+        let watchedMovies, watchlist;
+
+        if (localStorage.getItem("watched-movies") === null) {
+            watchedMovies = [];
+        } else {
+            watchedMovies = JSON.parse(localStorage.getItem("watched-movies"));
+        }
+
+        if (localStorage.getItem("watchlist") === null) {
+            watchlist = [];
+        } else {
+            watchlist = JSON.parse(localStorage.getItem("watchlist"));
+        }
+        watchedMovies.forEach((movieItem) => {
+            if (movieItem === movieID) {
+                watchedClass = "watched";
+                watchedText = "Watched";
+            }
+        })
+        watchlist.forEach((movieItem) => {
+            if (movieItem === movieID) {
+                watchlistClass = "watchlist";
+                watchlistText = "In Your Watchlist";
+            }
+        })
+
+
         let movie = response;
         $(".my-modal").append(
             `<div class="my-modal-content">
@@ -100,8 +144,10 @@ $(document).on("click", ".movie-details", function (e) {
                         <img src="${movie.Poster}" alt="">
                     </div>
                     <div class ="modal-btns">
-                        <button id ="modal-watched"><i class="material-icons">check_box</i> &nbsp; Watched</button>
-                        <button id ="modal-watchlist"><i class="material-icons">playlist_add</i>&nbsp; Add to Watchlist</button>
+                        <button 
+                       
+                        id ="modal-watched" class ="${watchedClass}" ><i class="material-icons">check_box</i> &nbsp; ${watchedText}</button>
+                        <button id ="modal-watchlist" class ="${watchlistClass}"><i class="material-icons">playlist_add</i>&nbsp; ${watchlistText} </button>
                     </div>
                 </div>
                 <div class="info">
@@ -141,5 +187,53 @@ $(document).on("click", ".my-modal", (e) => {
         $(".my-modal").removeClass("modal-open");
         $(".my-modal").html('');
     }
+
+})
+
+$(document).on("click", "#modal-watched", () => {
+    let watchedMovies;
+    if (localStorage.getItem("watched-movies") === null) {
+        watchedMovies = [];
+    } else {
+        watchedMovies = JSON.parse(localStorage.getItem("watched-movies"));
+    }
+
+    if ($.inArray(movieID, watchedMovies) == -1) {
+        watchedMovies.push(movieID);
+        $("#modal-watched").addClass("watched");
+        $("#modal-watched").html("<i class='material-icons'>check_box</i> &nbsp;Watched")
+    } else {
+        watchedMovies.splice($.inArray(movieID, watchedMovies));
+        $("#modal-watched").removeClass("watched");
+        $("#modal-watched").html("<i class='material-icons'>check_box</i> &nbsp;Add to Watched")
+
+    }
+
+    localStorage.setItem("watched-movies", JSON.stringify(watchedMovies));
+
+})
+$(document).on("click", "#modal-watchlist", () => {
+    let watchlist;
+    if (localStorage.getItem("watchlist") === null) {
+        watchlist = [];
+    } else {
+        watchlist = JSON.parse(localStorage.getItem("watchlist"));
+    }
+
+    if ($.inArray(movieID, watchlist) == -1) {
+        watchlist.push(movieID);
+        $("#modal-watchlist").addClass("watchlist");
+        $("#modal-watchlist").html("<i class='material-icons'>playlist_add</i>&nbsp; In Your Watchlist");
+
+
+    } else {
+        watchlist.splice($.inArray(movieID, watchlist));
+        $("#modal-watchlist").removeClass("watchlist");
+        $("#modal-watchlist").html("<i class='material-icons'>playlist_add</i>&nbsp; Add to Watchlist");
+
+    }
+
+
+    localStorage.setItem("watchlist", JSON.stringify(watchlist));
 
 })

@@ -70,10 +70,6 @@ body nav .nav-container {
           justify-content: space-between;
 }
 
-body nav .nav-container .logo-container {
-  text-decoration: none;
-}
-
 body nav .nav-container .logo-container .logo {
   background-color: #fdc325;
   border-radius: 8px;
@@ -81,7 +77,6 @@ body nav .nav-container .logo-container .logo {
   text-align: center;
   height: 55px;
   line-height: 55px;
-  cursor: pointer;
 }
 
 body nav .nav-container .logo-container .logo h1 {
@@ -106,15 +101,17 @@ body nav .nav-container .nav-btns {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  min-width: 50%;
 }
 
 body nav .nav-container .nav-btns a {
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   padding: 0.5rem 1rem;
   border-radius: 6px;
   outline: none;
   letter-spacing: 1px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   cursor: pointer;
   font-weight: bold;
   -webkit-transition: all 0.2s ease-out;
@@ -608,6 +605,16 @@ body .my-modal .my-modal-content .left-modal .modal-btns button {
   cursor: pointer;
   font-weight: bold;
   border: none;
+}
+
+body .my-modal .my-modal-content .left-modal .modal-btns button.watched, body .my-modal .my-modal-content .left-modal .modal-btns button.watchlist {
+  background-color: #005700;
+  color: white;
+}
+
+body .my-modal .my-modal-content .left-modal .modal-btns button.watched:hover, body .my-modal .my-modal-content .left-modal .modal-btns button.watchlist:hover {
+  background-color: #003500;
+  color: white;
 }
 
 body .my-modal .my-modal-content .left-modal .modal-btns button:hover {
