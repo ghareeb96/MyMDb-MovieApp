@@ -37,7 +37,7 @@ body .bg::after {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(16, 24, 32, 0.8);
+  background-color: rgba(16, 24, 32, 0.5);
   z-index: -1;
 }
 
@@ -118,7 +118,7 @@ body nav .nav-container .nav-btns a {
   transition: all 0.2s ease-out;
   background-color: #101820;
   border: none;
-  color: #f2aa4c;
+  color: #ecda36;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -131,13 +131,13 @@ body nav .nav-container .nav-btns a {
 }
 
 body nav .nav-container .nav-btns a:hover {
-  background-color: #f2aa4c;
+  background-color: #ecda36;
   border: none;
   color: #101820;
 }
 
 body nav .nav-container .nav-btns a.active {
-  background-color: #f2aa4c;
+  background-color: #ecda36;
   border: none;
   color: #101820;
 }
@@ -170,6 +170,7 @@ body header .slogan {
           justify-content: space-evenly;
   background-color: rgba(0, 0, 0, 0.5);
   height: 25vh;
+  text-align: center;
 }
 
 body header .slogan h2 {
@@ -208,10 +209,10 @@ body header .start-btn a {
   letter-spacing: 2px;
   padding: 0.7rem 1.5rem;
   border-radius: 8px;
-  border: 1px solid #f2aa4c;
+  border: 1px solid #ecda36;
   outline: none;
   background: #101820;
-  color: #f2aa4c;
+  color: #ecda36;
   cursor: pointer;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
@@ -219,7 +220,7 @@ body header .start-btn a {
 
 body header .start-btn a:hover {
   color: #101820;
-  background-color: #f2aa4c;
+  background-color: #ecda36;
 }
 
 body main {
@@ -227,7 +228,7 @@ body main {
 }
 
 body main #search-container {
-  width: 40%;
+  width: 50%;
   margin: auto;
   min-height: 40vh;
   display: -webkit-box;
@@ -255,7 +256,7 @@ body main #search-container #search-bar {
 }
 
 body main #search-container #search-bar #search-input {
-  width: 70%;
+  width: 65%;
   outline: none;
   border: none;
   border-radius: 30px 0 0 30px;
@@ -297,7 +298,7 @@ body main #search-container #search-bar #search-btn:hover {
 }
 
 body main #search-container #search-bar #search-btn:hover i {
-  color: #f2aa4c;
+  color: #ecda36;
 }
 
 body main #search-container #search-bar #searchOpBtn {
@@ -310,13 +311,14 @@ body main #search-container #search-bar #searchOpBtn {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #f2aa4c;
-  background: none;
+  color: #ecda36;
+  background-color: #101820;
+  border-radius: 0 30px 30px 0;
   font-size: 1.2rem;
   height: 100%;
   cursor: pointer;
-  width: 15%;
-  margin-left: auto;
+  width: 110px;
+  margin-left: 0;
   border: none;
   outline: none;
 }
@@ -340,7 +342,7 @@ body main #search-container .searchOptions {
   margin: 15px auto;
   background: rgba(16, 24, 32, 0.8);
   border-radius: 10px;
-  border: 2px solid #f2aa4c;
+  border: 2px solid #ecda36;
   -webkit-transform: translateY(-30px);
           transform: translateY(-30px);
   opacity: 0;
@@ -376,7 +378,7 @@ body main #search-container .searchOptions .search-group input {
 body main #search-container .searchOptions .search-group label {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #f2aa4c;
+  color: #ecda36;
 }
 
 body main #search-container .searchOptions.optionsActive {
@@ -471,7 +473,7 @@ body main .moviesContainer .movieContainer .movie-info button {
   letter-spacing: 2px;
   padding: 0 0.8rem;
   margin: 10px auto;
-  background-color: #f2aa4c;
+  background-color: #ecda36;
   font-weight: bold;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   border: none;
@@ -483,7 +485,7 @@ body main .moviesContainer .movieContainer .movie-info button {
 }
 
 body main .moviesContainer .movieContainer .movie-info button:hover {
-  background-color: #ef931c;
+  background-color: #dac715;
 }
 
 body .my-modal {
@@ -592,9 +594,9 @@ body .my-modal .my-modal-content .left-modal .modal-btns button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 90%;
-  font-size: 1.4rem;
-  background-color: #f2aa4c;
+  width: 100%;
+  font-size: 1.2rem;
+  background-color: #ecda36;
   color: #101820;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
@@ -618,7 +620,7 @@ body .my-modal .my-modal-content .left-modal .modal-btns button.watched:hover, b
 }
 
 body .my-modal .my-modal-content .left-modal .modal-btns button:hover {
-  background-color: #ef931c;
+  background-color: #dac715;
 }
 
 body .my-modal .my-modal-content .left-modal .modal-btns button i {
@@ -648,7 +650,7 @@ body .my-modal .my-modal-content .info .title {
 body .my-modal .my-modal-content .info .title h1 {
   margin: 0;
   font-weight: bold;
-  color: #f2aa4c;
+  color: #ecda36;
 }
 
 body .my-modal .my-modal-content .info .title h3 {
@@ -660,11 +662,11 @@ body .my-modal .my-modal-content .info h2,
 body .my-modal .my-modal-content .info h4 {
   font-family: 'Roboto Slab', serif;
   font-size: 1.6rem;
-  color: #f2aa4c;
+  color: #ecda36;
 }
 
 body .my-modal .my-modal-content .info fieldset {
-  border: 1px solid #f2aa4c;
+  border: 1px solid #ecda36;
   border-radius: 15px;
   padding: 8px;
   max-height: 400px;
@@ -688,73 +690,106 @@ body .my-modal.modal-open {
 }
 
 @media screen and (max-width: 1100px) {
-  body body header .searchOptions .form-group {
-    width: 45%;
+  body header .slogan h2 {
+    font-size: 3rem;
   }
-  body body .my-modal .my-modal-content {
+  body header .slogan h1 {
+    font-size: 3.5rem;
+  }
+  body .my-modal .my-modal-content {
     min-height: 50vh;
   }
-  body body .my-modal .my-modal-content .info {
+  body .my-modal .my-modal-content .left-modal .poster-container {
+    height: 80%;
+  }
+  body .my-modal .my-modal-content .left-modal .modal-btns {
+    height: 20%;
+  }
+  body .my-modal .my-modal-content .left-modal .modal-btns button {
+    font-size: 1rem;
+    padding: 0.3rem 0.8rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  body .my-modal .my-modal-content .left-modal .modal-btns button .info {
     padding: 10px;
   }
-  body body .my-modal .my-modal-content .info .title h1 {
+  body .my-modal .my-modal-content .left-modal .modal-btns button .info .title h1 {
     font-size: 1.6rem;
   }
-  body body .my-modal .my-modal-content .info .title h3 {
+  body .my-modal .my-modal-content .left-modal .modal-btns button .info .title h3 {
     font-size: 1rem;
   }
-  body body .my-modal .my-modal-content .info h2,
-  body body .my-modal .my-modal-content .info h4 {
+  body .my-modal .my-modal-content .left-modal .modal-btns button .info h2,
+  body .my-modal .my-modal-content .left-modal .modal-btns button .info h4 {
     font-size: 1.2rem;
   }
-  body body .my-modal .my-modal-content .info fieldset p {
+  body .my-modal .my-modal-content .left-modal .modal-btns button .info fieldset p {
     font-size: 0.8rem;
   }
-  body body .my-modal .my-modal-content .info span {
+  body .my-modal .my-modal-content .left-modal .modal-btns button .info span {
     font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 800px) {
-  body body header {
-    padding: 15px;
+  body nav {
+    height: 20vh;
   }
-  body body header .logo {
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-  }
-  body body header .logo h1 {
-    font-size: 3rem;
-  }
-  body body header #searchBar {
-    width: 50%;
+  body nav .nav-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
-  body body header #searchBar #searchInput {
-    margin: 5px auto;
+  body nav .nav-container .nav-btns {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
-  body body header #searchBar #searchBtn {
-    width: 40%;
-    margin: 5px auto;
+  body nav .nav-container .nav-btns a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.3rem 0.6rem;
   }
-  body body header #searchBar #searchOpBtn {
-    width: 40%;
-    margin: 5px auto;
+  body header .slogan h2 {
+    font-size: 2.3rem;
   }
-  body body header .searchOptions .form-group {
+  body header .slogan h1 {
+    font-size: 2.5rem;
+  }
+  body main #search-container {
+    width: 60%;
+  }
+  body main #search-container #search-bar #search-input {
+    min-width: 60%;
+    font-size: 1.3rem;
+  }
+  body main #search-container #search-bar #searchOpBtn {
+    font-size: 1.2rem;
+  }
+  body main #search-container .searchOptions {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-height: 120px;
+  }
+  body main #search-container .searchOptions .search-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
-  body body header .searchOptions .form-group legend {
-    font-size: 1rem;
-    text-align: center;
-    margin: 0;
-  }
-  body body .my-modal .my-modal-content {
+  body .my-modal .my-modal-content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -762,61 +797,151 @@ body .my-modal.modal-open {
     max-height: 70vh;
     overflow: auto;
   }
-  body body .my-modal .my-modal-content .poster-container {
-    width: auto;
-    height: 20%;
-    margin: auto;
+  body .my-modal .my-modal-content .left-modal {
+    width: 100%;
+    height: 100%;
   }
-  body body .my-modal .my-modal-content .info {
+  body .my-modal .my-modal-content .left-modal .poster-container {
+    width: 100%;
+  }
+  body .my-modal .my-modal-content .left-modal .poster-container img {
+    width: 60%;
+    height: 60%;
+  }
+  body .my-modal .my-modal-content .left-modal .modal-btns {
+    margin: auto;
+    width: 60%;
+    height: 120px;
+  }
+  body .my-modal .my-modal-content .left-modal .modal-btns button {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  body .my-modal .my-modal-content .info {
     padding: 10px;
     width: 100%;
   }
-  body body .my-modal .my-modal-content .info .title h1 {
+  body .my-modal .my-modal-content .info .title h1 {
     font-size: 1.6rem;
   }
-  body body .my-modal .my-modal-content .info .title h3 {
+  body .my-modal .my-modal-content .info .title h3 {
     font-size: 1rem;
   }
-  body body .my-modal .my-modal-content .info h2,
-  body body .my-modal .my-modal-content .info h4 {
+  body .my-modal .my-modal-content .info h2,
+  body .my-modal .my-modal-content .info h4 {
     font-size: 1.2rem;
   }
-  body body .my-modal .my-modal-content .info fieldset {
+  body .my-modal .my-modal-content .info fieldset {
     overflow: hidden;
   }
-  body body .my-modal .my-modal-content .info fieldset p {
-    font-size: 0.8rem;
+  body .my-modal .my-modal-content .info fieldset p {
+    font-size: 1.1rem;
   }
-  body body .my-modal .my-modal-content .info span {
+  body .my-modal .my-modal-content .info span {
     font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 500px) {
-  body body header {
-    min-height: 230px;
+  body nav {
+    height: 20vh;
   }
-  body body header #searchBar {
-    width: 65%;
-  }
-  body body header .searchOptions {
+  body nav .nav-container {
     width: 100%;
   }
-  body body header .searchOptions .form-group {
+  body nav .nav-container .nav-btns a {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.4rem;
+  }
+  body header .slogan {
+    height: 15vh;
+  }
+  body header .slogan h2 {
+    font-size: 1.4rem;
+  }
+  body header .slogan h1 {
+    font-size: 1.6rem;
+  }
+  body header .start-btn a {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    padding: 0.7rem 1.5rem;
+  }
+  body main #search-container {
+    width: 80%;
+  }
+  body main #search-container #search-bar #search-input {
+    min-width: 60%;
+    font-size: 0.8rem;
+  }
+  body main #search-container #search-bar #searchOpBtn {
+    font-size: 0.8rem;
+  }
+  body main #search-container #search-bar #search-btn {
+    width: 15%;
+  }
+  body main #search-container .searchOptions {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-height: 100px;
+  }
+  body main #search-container .searchOptions .search-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
-  body body header .searchOptions .form-group legend {
-    font-size: 0.8rem;
-    text-align: center;
-    margin: 0;
+  body main #search-container .searchOptions .search-group label,
+  body main #search-container .searchOptions .search-group select,
+  body main #search-container .searchOptions .search-group input {
+    font-size: 1rem;
   }
-  body body header .searchOptions.optionsActive {
-    top: 230px;
+  body .my-modal .my-modal-content .left-modal .poster-container img {
+    height: 80;
+    width: 80;
   }
-  body body .moviesContainer {
-    top: 240px;
+  body .my-modal .my-modal-content .left-modal .modal-btns {
+    margin: auto;
+    width: 70%;
+    height: 120px;
+  }
+  body .my-modal .my-modal-content .left-modal .modal-btns button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  body .my-modal .my-modal-content .info {
+    padding: 10px;
+    width: 100%;
+  }
+  body .my-modal .my-modal-content .info .title h1 {
+    font-size: 1.6rem;
+  }
+  body .my-modal .my-modal-content .info .title h3 {
+    font-size: 1rem;
+  }
+  body .my-modal .my-modal-content .info h2,
+  body .my-modal .my-modal-content .info h4 {
+    font-size: 1.2rem;
+  }
+  body .my-modal .my-modal-content .info fieldset {
+    overflow: hidden;
+  }
+  body .my-modal .my-modal-content .info fieldset p {
+    font-size: 1.1rem;
+  }
+  body .my-modal .my-modal-content .info span {
+    font-size: 1rem;
   }
 }
 /*# sourceMappingURL=style.css.map */

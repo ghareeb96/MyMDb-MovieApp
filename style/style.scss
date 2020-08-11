@@ -3,8 +3,31 @@
     src: url(impact.ttf);
 }
 
+
+// $primary-color :rgb(19, 25, 59);
+// $secondary-color : #FAEBEF;
+
+// $primary-color :rgb(17, 35, 51);
+// $secondary-color : rgb(132, 238, 190);
+
+// $primary-color :rgb(56, 56, 56);
+// $secondary-color : rgb(225, 243, 60);
+
+// $primary-color :#330006;
+// $secondary-color : #FCF6F5;
+
+
+
+// $primary-color :#1C1C1B;
+// $secondary-color : #CE4A7E;
+
+
 $primary-color :rgb(16, 24, 32);
-$secondary-color : rgb(242, 170, 76);
+$secondary-color : rgb(236, 218, 54);
+
+
+
+
 
 * {
     margin: 0;
@@ -37,7 +60,7 @@ body {
             left: 0;
             height: 100%;
             width: 100%;
-            background-color: rgba($primary-color, 0.8);
+            background-color: rgba($primary-color, 0.5);
             z-index: -1;
 
         }
@@ -148,6 +171,8 @@ body {
             justify-content: space-evenly;
             background-color: rgba(0, 0, 0, 0.5);
             height: 25vh;
+            text-align: center;
+
 
             h2 {
                 color: white;
@@ -202,7 +227,7 @@ body {
         min-height: 70vh;
 
         #search-container {
-            width: 40%;
+            width: 50%;
             margin: auto;
             min-height: 40vh;
             display: flex;
@@ -217,7 +242,7 @@ body {
 
 
                 #search-input {
-                    width: 70%;
+                    width: 65%;
                     outline: none;
                     border: none;
                     border-radius: 30px 0 0 30px;
@@ -261,12 +286,14 @@ body {
                     justify-content: center;
                     align-items: center;
                     color: $secondary-color;
-                    background: none;
+                    background-color: $primary-color;
+                    // background: none;
+                    border-radius: 0 30px 30px 0;
                     font-size: 1.2rem;
                     height: 100%;
                     cursor: pointer;
-                    width: 15%;
-                    margin-left: auto;
+                    width: 110px;
+                    margin-left: 0;
                     border: none;
                     outline: none;
                 }
@@ -479,8 +506,8 @@ body {
                         flex-direction: row;
                         justify-content: center;
                         align-items: center;
-                        width: 90%;
-                        font-size: 1.4rem;
+                        width: 100%;
+                        font-size: 1.2rem;
                         background-color: $secondary-color;
                         color: $primary-color;
                         transition: all 0.2s ease-out;
@@ -580,199 +607,381 @@ body {
         }
     }
 
+}
 
-    @media screen and(max-width : 1100px) {
-        body {
-            // font-size: 0.8rem;
 
-            header {
-                .searchOptions {
-                    .form-group {
-                        width: 45%;
-                    }
+@media screen and(max-width : 1100px) {
+    body {
+
+
+        header {
+            .slogan {
+                h2 {
+                    font-size: 3rem;
+                }
+
+                h1 {
+                    font-size: 3.5rem;
                 }
             }
-
-            .my-modal {
-                .my-modal-content {
-                    min-height: 50vh;
+        }
 
 
-                    .info {
-                        padding: 10px;
+        .my-modal {
+            .my-modal-content {
+                min-height: 50vh;
 
-                        .title {
-                            h1 {
-                                font-size: 1.6rem;
-                            }
+                .left-modal {
 
-                            h3 {
-                                font-size: 1rem;
+                    .poster-container {
+                        height: 80%;
 
-                            }
-                        }
+                    }
 
-                        h2,
-                        h4 {
-                            font-size: 1.2rem;
-                        }
+                    .modal-btns {
+                        height: 20%;
 
+                        button {
 
-                        fieldset {
-                            p {
-                                font-size: 0.8rem;
-                            }
-                        }
-
-                        span {
                             font-size: 1rem;
+                            padding: 0.3rem 0.8rem;
+                            letter-spacing: 1px;
+                            font-weight: bold;
 
+                            .info {
+                                padding: 10px;
+
+                                .title {
+                                    h1 {
+                                        font-size: 1.6rem;
+                                    }
+
+                                    h3 {
+                                        font-size: 1rem;
+
+                                    }
+                                }
+
+                                h2,
+                                h4 {
+                                    font-size: 1.2rem;
+                                }
+
+
+                                fieldset {
+                                    p {
+                                        font-size: 0.8rem;
+                                    }
+                                }
+
+                                span {
+                                    font-size: 1rem;
+
+                                }
+                            }
                         }
                     }
                 }
             }
         }
     }
+}
 
-    @media screen and(max-width : 800px) {
-        body {
-            header {
-                padding: 15px;
+@media screen and(max-width : 800px) {
+    body {
+        nav {
+            height: 20vh;
 
-                .logo {
-                    padding: 0.4rem 1rem;
-                    border-radius: 20px;
+            .nav-container {
+                flex-direction: column;
+                justify-content: space-evenly;
 
-                    h1 {
-                        font-size: 3rem;
+                .nav-btns {
+                    justify-content: space-evenly;
+
+                    a {
+                        text-decoration: none;
+                        font-size: 1.1rem;
+                        padding: 0.3rem 0.6rem;
                     }
-
                 }
 
-                #searchBar {
-                    width: 50%;
-                    flex-direction: column;
+            }
+        }
 
-                    #searchInput {
-                        // width: 80%;
-                        margin: 5px auto;
+        header {
+            .slogan {
+                h2 {
+                    font-size: 2.3rem;
+                }
 
-                    }
+                h1 {
+                    font-size: 2.5rem;
 
-                    #searchBtn {
-                        width: 40%;
-                        margin: 5px auto;
+                }
+            }
 
+        }
+
+        main {
+
+            #search-container {
+                width: 60%;
+
+                #search-bar {
+
+                    #search-input {
+                        min-width: 60%;
+                        font-size: 1.3rem;
                     }
 
                     #searchOpBtn {
-                        width: 40%;
-                        margin: 5px auto;
-
+                        font-size: 1.2rem;
                     }
                 }
 
                 .searchOptions {
-                    .form-group {
+                    justify-content: space-evenly;
+                    align-items: center;
+                    min-height: 120px;
+
+                    .search-group {
+                        flex-direction: column;
                         align-items: center;
-
-                        legend {
-                            font-size: 1rem;
-                            text-align: center;
-                            margin: 0;
-                        }
-
                     }
+
+
                 }
             }
 
+        }
 
-            .my-modal {
-                .my-modal-content {
-                    flex-direction: column;
-                    max-height: 70vh;
-                    overflow: auto;
+        .my-modal {
+            .my-modal-content {
+                flex-direction: column;
+                max-height: 70vh;
+                overflow: auto;
+
+                .left-modal {
+                    width: 100%;
+                    height: 100%;
 
                     .poster-container {
-                        width: auto;
-                        height: 20%;
-                        margin: auto;
-                    }
-
-                    .info {
-                        padding: 10px;
                         width: 100%;
 
 
-                        .title {
-                            h1 {
-                                font-size: 1.6rem;
-                            }
-
-                            h3 {
-                                font-size: 1rem;
-
-                            }
+                        img {
+                            width: 60%;
+                            height: 60%;
                         }
+                    }
 
-                        h2,
-                        h4 {
+                    .modal-btns {
+                        margin: auto;
+                        width: 60%;
+                        height: 120px;
+
+                        button {
                             font-size: 1.2rem;
+                            padding: 0.5rem 1rem;
+                            letter-spacing: 1px;
+                            font-weight: bold;
+                        }
+                    }
+
+                }
+
+                .info {
+                    padding: 10px;
+                    width: 100%;
+
+
+                    .title {
+                        h1 {
+                            font-size: 1.6rem;
                         }
 
-
-                        fieldset {
-                            overflow: hidden;
-
-                            p {
-                                font-size: 0.8rem;
-                            }
-                        }
-
-                        span {
+                        h3 {
                             font-size: 1rem;
 
                         }
+                    }
+
+                    h2,
+                    h4 {
+                        font-size: 1.2rem;
+                    }
+
+
+                    fieldset {
+                        overflow: hidden;
+
+                        p {
+                            font-size: 1.1rem;
+                        }
+                    }
+
+                    span {
+                        font-size: 1rem;
+
                     }
                 }
             }
         }
     }
+}
 
-    @media screen and(max-width : 500px) {
-        body {
-            header {
-                min-height: 230px;
+@media screen and(max-width : 500px) {
+    body {
+        nav {
+            height: 20vh;
 
-                #searchBar {
-                    width: 65%;
-                }
+            .nav-container {
+                width: 100%;
 
-                .searchOptions {
-                    width: 100%;
-
-                    .form-group {
-                        align-items: center;
-
-                        legend {
-                            font-size: 0.8rem;
-                            text-align: center;
-                            margin: 0;
-                        }
-
-                    }
-
-                    &.optionsActive {
-                        top: 230px;
-
+                .nav-btns {
+                    a {
+                        font-size: 0.9rem;
+                        padding: 0.2rem 0.4rem;
                     }
                 }
-            }
 
-            .moviesContainer {
-                top: 240px;
             }
         }
 
+        header {
+            .slogan {
+                height: 15vh;
+
+                h2 {
+                    font-size: 1.4rem;
+                }
+
+                h1 {
+                    font-size: 1.6rem;
+
+                }
+            }
+
+            .start-btn {
+
+                a {
+                    font-size: 2rem;
+                    letter-spacing: 1px;
+                    padding: 0.7rem 1.5rem;
+
+                }
+            }
+
+        }
+
+        main {
+
+            #search-container {
+                width: 80%;
+
+                #search-bar {
+
+                    #search-input {
+                        min-width: 60%;
+                        font-size: 0.8rem;
+                    }
+
+                    #searchOpBtn {
+                        font-size: 0.8rem;
+                    }
+
+                    #search-btn {
+                        width: 15%;
+                    }
+                }
+
+                .searchOptions {
+                    justify-content: space-evenly;
+                    align-items: center;
+                    min-height: 100px;
+
+                    .search-group {
+                        flex-direction: column;
+                        align-items: center;
+
+                        label,
+                        select,
+                        input {
+                            font-size: 1rem;
+
+                        }
+                    }
+
+
+                }
+            }
+
+        }
+
+        .my-modal {
+            .my-modal-content {
+
+                .left-modal {
+
+                    .poster-container {
+                        img {
+                            height: 80;
+                            width: 80;
+                        }
+                    }
+
+                    .modal-btns {
+                        margin: auto;
+                        width: 70%;
+                        height: 120px;
+
+                        button {
+                            font-size: 1rem;
+                            padding: 0.5rem 1rem;
+                            letter-spacing: 1px;
+                            font-weight: bold;
+                        }
+                    }
+
+                }
+
+                .info {
+                    padding: 10px;
+                    width: 100%;
+
+
+                    .title {
+                        h1 {
+                            font-size: 1.6rem;
+                        }
+
+                        h3 {
+                            font-size: 1rem;
+
+                        }
+                    }
+
+                    h2,
+                    h4 {
+                        font-size: 1.2rem;
+                    }
+
+
+                    fieldset {
+                        overflow: hidden;
+
+                        p {
+                            font-size: 1.1rem;
+                        }
+                    }
+
+                    span {
+                        font-size: 1rem;
+
+                    }
+                }
+            }
+        }
     }
 }
