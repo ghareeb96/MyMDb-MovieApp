@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="166.881" height="54" viewBox="0 0 166.881 54">
+  <g id="Group_1" data-name="Group 1" transform="translate(-100 -27)">
+    <text id="FINDE" transform="translate(100 67)" font-size="40" font-family="Nunito-ExtraBold, Nunito" font-weight="800" letter-spacing="0.11em"><tspan x="0" y="0">FINDE</tspan></text>
+    <line id="Line_2" data-name="Line 2" y1="16" transform="translate(247.5 48.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="5"/>
+    <line id="Line_1" data-name="Line 1" x2="7" y2="11" transform="translate(258.5 54.5)" fill="none" stroke="#0085bf" stroke-linecap="round" stroke-width="2"/>
+    <g id="Path_1" data-name="Path 1" transform="translate(245 38)">
+      <path id="Path_2" data-name="Path 2" d="M10.25,19.5a9.25,9.25,0,1,1,9.25-9.25A9.26,9.26,0,0,1,10.25,19.5Z" fill="#fbfbfb"/>
+      <path id="Path_3" data-name="Path 3" d="M10.25,2a8.25,8.25,0,1,0,8.25,8.25A8.259,8.259,0,0,0,10.25,2m0-2A10.25,10.25,0,1,1,0,10.25,10.25,10.25,0,0,1,10.25,0Z" fill="#0085bf"/>
+    </g>
+  </g>
+</svg>

@@ -5,81 +5,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
-    <title>MyMDb</title>
+    <title>FINDER</title>
 </head>
 
-<body data-theme="dark">
-    <div class="bg"></div>
-    <nav>
-        <div class="nav-container">
-            <div class="logo-container">
+<body>
+    <div class="container">
+
+        <nav>
+            <div class="nav-container">
+
                 <div class="logo">
-                    <h1> <span>My</span>MDb</h1>
+                    <img src="./Logo.svg" alt="logo">
+                </div>
+
+                <div class="nav-links">
+                    <a class="link active">
+                        <i class="material-icons">home</i>&nbsp; Home</a>
+
+                    <a href="watched.html" class="link">
+                        <i class="material-icons">playlist_add_check</i>&nbsp; Watched</a>
+
+                    <a href="watchlist.html" class="link">
+                        <i class="material-icons">view_list</i>&nbsp; Watchlist</a>
+
                 </div>
             </div>
+        </nav>
 
-            <div class="nav-btns">
-                <a class="home-btn active">
-                    <i class="material-icons">home</i>&nbsp; Home</a>
 
-                <a href="watched.html" class="watched-btn">
-                    <i class="material-icons">playlist_add_check</i>&nbsp; Watched</a>
-
-                <a href="watchlist.html" class="watchlist-btn">
-                    <i class="material-icons">view_list</i>&nbsp; Watchlist</a>
-
-            </div>
-        </div>
-    </nav>
-    <header>
-        <div class="slogan">
-            <h2>Search for Movies & Series</h2>
-            <h2>Make your own Watchlist</h2>
-        </div>
-        <div class="start-btn">
-            <a id="start-btn" href="#search-container">GET START</a>
-        </div>
-    </header>
-
-    <!-- !=============================================-->
-    <main>
-        <div id="search-container">
-            <div id="search-bar">
-                <input type="text" placeholder="Search Here ..." id="search-input">
-                <button id="search-btn"><i class="material-icons">search</i></button>
-                <button href="#" id="searchOpBtn">Options <i class="material-icons">arrow_drop_down</i></button>
+        <div class="hero-section">
+            <div class="slogan">
+                <h1>Search for Movies, Series</h1>
+                <h3>And make your own List</h3>
             </div>
 
-            <div class="searchOptions">
-                <div class="search-group" id="search-type">
-                    <label for="type">Type</label>
-                    <select class="custom-select" id="type">
-                        <option value="any">Any</option>
-                        <option value="movie">Movie</option>
-                        <option value="series">Series</option>
-                        <option value="episode">Episode</option>
-                    </select>
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search Here ..." id="search-input">
+                    <button id="search-btn"><i class="material-icons">search</i></button>
                 </div>
-                <div class="search-group" id="release-year">
-                    <label for="year">Year</label>
-                    <input type="number" min="1950" max="2020" class="form-control" placeholder="Year" id="year">
+
+                <div class="search-filter">
+                    <div class="search-type">
+                        <div class="filter-headline">
+                            <h3>Looking for :</h3>
+                        </div>
+                        <div class="radio-group">
+
+                            <label class="radio-container">All
+                                <input type="radio" checked="checked" name="search-type" value="any">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="radio-container">Movies
+                                <input type="radio" name="search-type" value="movie">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="radio-container">Series
+                                <input type="radio" name="search-type" value="series">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="radio-container">Episodes
+                                <input type="radio" name="search-type" value="episode">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="search-year" id="release-year">
+                        <div class="filter-headline">
+                            <h3>Released in :</h3>
+                        </div>
+                        <input type="number" min="1950" max="2021" placeholder="Year" id="year">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="moviesContainer">
+        <!-- !=============================================-->
+        <main>
+            <div class="moviesContainer">
+            </div>
+        </main>
+
+        <!-- !=============================================-->
+
+
+
+        <div class="my-modal">
+
+
         </div>
-    </main>
-
-    <!-- !=============================================-->
-
-
-
-    <div class="my-modal">
-
-
     </div>
 
 

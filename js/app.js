@@ -1,19 +1,22 @@
 let url = "https://www.omdbapi.com/?apikey=7d1c1e6c";
 let page;
 let movieID;
+let searchType = "any";
+
+$("input[name=search-type]").on("change", () => {
+    searchType = $("input[name=search-type]:checked").val()
+})
 
 
 const noPic = "https://upload.wikimedia.org/wikipedia/en/6/60/No_Picture.jpg";
 $("#search-btn").click(() => {
         page = 1;
         newUrl = url + "&s=" + $("#search-input").val() + "&page=" + page;
-        if ($(".searchOptions").hasClass("optionsActive")) {
-            if ($("#type").val() != "any") {
-                newUrl += "&type=" + $("#type").val();
-            }
-            if ($("#year").val() != "") {
-                newUrl += "&y=" + $("#year").val();
-            }
+        if (searchType != "any") {
+            newUrl += "&type=" + searchType;
+        }
+        if ($("#year").val() != "") {
+            newUrl += "&y=" + $("#year").val();
         }
 
         $.get(newUrl).then(response => {
@@ -56,13 +59,11 @@ $(window).on('scroll', function () {
 
     if (scrollPosition >= divTotalHeight) {
         newUrl = url + "&s=" + $("#search-input").val() + "&page=" + page;
-        if ($(".searchOptions").hasClass("optionsActive")) {
-            if ($("#type").val() != "any") {
-                newUrl += "&type=" + $("#type").val();
-            }
-            if ($("#year").val() != "" && $("#year").val() >= 1950 && $("#year").val() <= 2020) {
-                newUrl += "&y=" + $("#year").val();
-            }
+        if (searchType != "any") {
+            newUrl += "&type=" + searchType;
+        }
+        if ($("#year").val() != "") {
+            newUrl += "&y=" + $("#year").val();
         }
         $.get(newUrl).then(response => {
             let movies = response.Search;
@@ -137,7 +138,7 @@ $(document).on("click", ".movie-details", function (e) {
                     </div>
                     <div class ="modal-btns">
                         <button 
-                       
+
                         id ="modal-watched" class ="${watchedClass}" ><i class="material-icons">check_box</i> &nbsp; ${watchedText}</button>
                         <button id ="modal-watchlist" class ="${watchlistClass}"><i class="material-icons">playlist_add</i>&nbsp; ${watchlistText} </button>
                     </div>
@@ -145,28 +146,26 @@ $(document).on("click", ".movie-details", function (e) {
                 <div class="info">
                     <div class="title">
                         <h1>${movie.Title} <span>(${movie.Year})<span/></h1>
-                        <h3>${movie.Type}</h3>
                     </div>
-                    <div class="actors">
-                        <h2>Actors : <span>${movie.Actors}<span/></h2>
+                    <div class="detail">
+                        <h2>Actors </h2> <h3>${movie.Actors}<h3/>
                     </div>
-                    <div class="director">
-                        <h2>Director : <span>${movie.Director}<span/></h2>
+                    <div class="detail">
+                        <h2>Director </h2> <h3>${movie.Director}<h3/>
                     </div>
-                    <div class="genre">
-                        <h2>Genre : <span>${movie.Genre}<span/></h2>
+                    <div class="detail">
+                        <h2>Genre </h2> <h3>${movie.Genre}<h3/>
                     </div>
-                    <div class="rated">
-                        <h2>Rated : <span>${movie.Rated}<span/></h2>
+                    <div class="detail">
+                        <h2>Rated </h2> <h3>${movie.Rated}<h3/>
                     </div>
-                    <div class="imdb-rate">
-                        <h2>IMDb Rating : <span>${movie.imdbRating}<span/></h2>
+                    <div class="detail">
+                        <h2>IMDb Rating </h2> <h3>${movie.imdbRating}<h3/>
                     </div>
-                    
-                    <fieldset class="plot">
-                        <h4>Plot</h4>
+                    <div class="detail plot">
+                        <h2>Plot</h2>
                         <p>${movie.Plot}</p>
-                    </fieldset>
+                    </div>
                 </div>
             </div>`
         );
