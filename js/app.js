@@ -57,7 +57,7 @@ $(window).on('scroll', function () {
     var scrollPosition = $(window).scrollTop() + $(window).outerHeight();
     var divTotalHeight = $(".moviesContainer")[0].scrollHeight + $(".moviesContainer")[0].offsetTop + parseInt($(".moviesContainer").css("margin-bottom"));
 
-    if (scrollPosition >= divTotalHeight) {
+    if (scrollPosition >= divTotalHeight && page >= 1) {
         newUrl = url + "&s=" + $("#search-input").val() + "&page=" + page;
         if (searchType != "any") {
             newUrl += "&type=" + searchType;

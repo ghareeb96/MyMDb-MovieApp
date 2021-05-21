@@ -5,50 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
     <title>Watchlist</title>
 </head>
 
 <body>
-    <div class="bg"></div>
-    <nav>
-        <div class="nav-container">
-            <div class="logo-container">
+    <div class="container">
+
+        <nav>
+            <div class="nav-container">
+
                 <div class="logo">
-                    <h1> <span>My</span>MDb</h1>
+                    <img src="./Logo.svg" alt="logo">
+                </div>
+
+                <div class="nav-links">
+                    <a href="index.html" class="link">
+                        <i class="material-icons">home</i>&nbsp; Home</a>
+
+                    <a href="watched.html" class="link">
+                        <i class="material-icons">playlist_add_check</i>&nbsp; Watched</a>
+
+                    <a href="watchlist.html" class="link active">
+                        <i class="material-icons">view_list</i>&nbsp; Watchlist</a>
+
                 </div>
             </div>
+        </nav>
 
-            <div class="nav-btns">
-                <a href="index.html" class="home-btn">
-                    <i class="material-icons">home</i>&nbsp; Home</a>
-                <a href="watched.html" class="watched-btn">
-                    <i class="material-icons">playlist_add_check</i>&nbsp; Watched</a>
-
-                <a class="watchlist-btn active">
-                    <i class="material-icons">view_list</i>&nbsp; Watchlist</a>
-
+        <main>
+            <div class="moviesContainer">
             </div>
+        </main>
+
+        <div class="my-modal">
+
+
         </div>
-    </nav>
-    <header>
-        <div class="slogan">
-            <h1>MY WATCHLIST</h1>
-        </div>
-    </header>
-
-    <!-- !=============================================-->
-    <main>
-        <div class="moviesContainer">
-        </div>
-    </main>
-    <!-- !=============================================-->
-
-
-
-    <div class="my-modal">
     </div>
 
 

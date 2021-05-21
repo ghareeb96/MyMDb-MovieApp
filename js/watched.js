@@ -61,44 +61,42 @@ $(document).on("click", ".movie-details", function (e) {
         let movie = response;
         $(".my-modal").append(
             `<div class="my-modal-content">
-                <div class ="left-modal">   
-                    <div class="poster-container">
-                        <img src="${movie.Poster}" alt="">
-                    </div>
-                    <div class ="modal-btns">
-                        <button 
-                       
-                        id ="modal-watched" class ="${watchedClass}" ><i class="material-icons">check_box</i> &nbsp; ${watchedText}</button>
-                        <button id ="modal-watchlist" class ="${watchlistClass}"><i class="material-icons">playlist_add</i>&nbsp; ${watchlistText} </button>
-                    </div>
+            <div class ="left-modal">   
+                <div class="poster-container">
+                    <img src="${movie.Poster}" alt="">
                 </div>
-                <div class="info">
-                    <div class="title">
-                        <h1>${movie.Title} <span>(${movie.Year})<span/></h1>
-                        <h3>${movie.Type}</h3>
-                    </div>
-                    <div class="actors">
-                        <h2>Actors : <span>${movie.Actors}<span/></h2>
-                    </div>
-                    <div class="director">
-                        <h2>Director : <span>${movie.Director}<span/></h2>
-                    </div>
-                    <div class="genre">
-                        <h2>Genre : <span>${movie.Genre}<span/></h2>
-                    </div>
-                    <div class="rated">
-                        <h2>Rated : <span>${movie.Rated}<span/></h2>
-                    </div>
-                    <div class="imdb-rate">
-                        <h2>IMDb Rating : <span>${movie.imdbRating}<span/></h2>
-                    </div>
-                    
-                    <fieldset class="plot">
-                        <h4>Plot</h4>
-                        <p>${movie.Plot}</p>
-                    </fieldset>
+                <div class ="modal-btns">
+                    <button 
+
+                    id ="modal-watched" class ="${watchedClass}" ><i class="material-icons">check_box</i> &nbsp; ${watchedText}</button>
+                    <button id ="modal-watchlist" class ="${watchlistClass}"><i class="material-icons">playlist_add</i>&nbsp; ${watchlistText} </button>
                 </div>
-            </div>`
+            </div>
+            <div class="info">
+                <div class="title">
+                    <h1>${movie.Title} <span>(${movie.Year})<span/></h1>
+                </div>
+                <div class="detail">
+                    <h2>Actors </h2> <h3>${movie.Actors}<h3/>
+                </div>
+                <div class="detail">
+                    <h2>Director </h2> <h3>${movie.Director}<h3/>
+                </div>
+                <div class="detail">
+                    <h2>Genre </h2> <h3>${movie.Genre}<h3/>
+                </div>
+                <div class="detail">
+                    <h2>Rated </h2> <h3>${movie.Rated}<h3/>
+                </div>
+                <div class="detail">
+                    <h2>IMDb Rating </h2> <h3>${movie.imdbRating}<h3/>
+                </div>
+                <div class="detail plot">
+                    <h2>Plot</h2>
+                    <p>${movie.Plot}</p>
+                </div>
+            </div>
+        </div>`
         );
         $(".my-modal").addClass("modal-open");
     })
